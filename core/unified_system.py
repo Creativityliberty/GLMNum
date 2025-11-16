@@ -231,6 +231,36 @@ class UnifiedGLM:
     # ENCODING
     # ========================================================================
     
+    def _standard_encode(self, content: str, domain: str) -> Dict[str, Any]:
+        """
+        Standard encoding through SymbolicEngine.
+        
+        Routes content to appropriate domain for encoding.
+        
+        Args:
+            content: Content to encode
+            domain: Domain name (text, code, geometry, image, etc.)
+        
+        Returns:
+            Encoded representation with ∆∞Ο
+            
+        Raises:
+            RuntimeError: If SymbolicEngine not available
+            ValueError: If domain not found
+        """
+        if not self.symbolic_engine:
+            raise RuntimeError("SymbolicEngine not available")
+        
+        # Get domain from engine
+        domain_obj = self.symbolic_engine.get_domain(domain)
+        if not domain_obj:
+            raise ValueError(f"Domain not found: {domain}")
+        
+        # Encode using domain
+        result = domain_obj.encode(content)
+        
+        return result
+    
     def detect_content_type(self, content: Union[str, bytes]) -> ContentType:
         """Auto-detect content type"""
         if isinstance(content, str):

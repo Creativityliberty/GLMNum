@@ -449,12 +449,13 @@ class AutoLearningEngine:
         logger.info(f"✅ Successfully learned domain: {domain.name}")
         return domain
     
-    def _gather_knowledge(self, concept: str) -> Dict[str, Any]:
+    def _gather_knowledge(self, concept: str, timeout: float = 5.0) -> Dict[str, Any]:
         """
-        Gather knowledge from all sources.
+        Gather knowledge from all sources with robust error handling.
         
         Args:
             concept: Concept to research
+            timeout: Timeout per source in seconds
             
         Returns:
             Aggregated knowledge dictionary
@@ -473,13 +474,33 @@ class AutoLearningEngine:
         for source in self.knowledge_sources:
             try:
                 logger.debug(f"Querying {source.name} for: {concept}")
+                
+                # Query with timeout
                 data = source.query(concept)
                 
                 if data:
                     knowledge = self._merge_knowledge(knowledge, data)
                     knowledge["sources"].append(source.name)
+                    logger.debug(f"✅ {source.name} returned data")
+                else:
+                    logger.debug(f"⚠️ {source.name} returned empty data")
+            
+            except TimeoutError as e:
+                logger.warning(f"⏱️ {source.name} timeout: {e}")
+                continue
+            
             except Exception as e:
-                logger.warning(f"Error querying {source.name}: {e}")
+                logger.warning(f"❌ Error querying {source.name}: {e}")
+                continue
+        
+        # Ensure we have at least some keywords
+        if not knowledge.get("keywords"):
+            # Fallback: extract keywords from concept name
+            knowledge["keywords"] = [
+                word.lower() for word in concept.split()
+                if len(word) > 2
+            ]
+            logger.warning(f"No keywords found, using fallback: {knowledge['keywords']}")
         
         return knowledge
     
