@@ -25,10 +25,13 @@ logger = logging.getLogger(__name__)
 # Try importing all components
 try:
     from core.symbolic import SymbolicEngine
+    from core.auto_learning import AutoLearningEngine, integrate_auto_learning
     SYMBOLIC_AVAILABLE = True
+    AUTO_LEARNING_AVAILABLE = True
 except ImportError:
     SYMBOLIC_AVAILABLE = False
-    logger.warning("SymbolicEngine not available")
+    AUTO_LEARNING_AVAILABLE = False
+    logger.warning("SymbolicEngine or AutoLearningEngine not available")
 
 try:
     from numtriad.core.system_v4 import NumTriadSystemV4, NumTriadSystemConfig
@@ -155,15 +158,25 @@ class UnifiedGLM:
         """Initialize unified system"""
         self.config = config or {}
         self.device = self.config.get("device", "cpu")
+        self.enable_auto_learning = self.config.get("enable_auto_learning", True)
         
         logger.info("Initializing Unified GLM v4.0...")
         
         # Initialize GLM SymbolicEngine
         self.symbolic_engine = None
+        self.auto_learner = None
         if SYMBOLIC_AVAILABLE:
             try:
                 self.symbolic_engine = SymbolicEngine()
                 logger.info("✅ SymbolicEngine initialized")
+                
+                # Initialize AutoLearningEngine
+                if AUTO_LEARNING_AVAILABLE and self.enable_auto_learning:
+                    try:
+                        self.auto_learner = integrate_auto_learning(self.symbolic_engine)
+                        logger.info("✅ AutoLearningEngine integrated")
+                    except Exception as e:
+                        logger.warning(f"Failed to integrate AutoLearningEngine: {e}")
             except Exception as e:
                 logger.warning(f"Failed to initialize SymbolicEngine: {e}")
         
@@ -213,6 +226,78 @@ class UnifiedGLM:
             # Could be image
             return ContentType.IMAGE
         return ContentType.MIXED
+    
+    def encode_with_auto_learning(
+        self,
+        content: Union[str, bytes],
+        domain: str = "auto"
+    ) -> Dict[str, Any]:
+        """
+        Encode content with automatic domain learning.
+        
+        If domain is unknown, AutoLearningEngine will:
+        1. Detect the unknown concept
+        2. Fetch knowledge from multiple sources
+        3. Create a new domain dynamically
+        4. Register it with SymbolicEngine
+        5. Encode with the new domain
+        
+        Args:
+            content: Content to encode
+            domain: Domain name or "auto"
+            
+        Returns:
+            Encoding result with triad representation
+        """
+        if not self.auto_learner:
+            logger.warning("AutoLearningEngine not available, using standard encoding")
+            return self.encode_anything(content, domain)
+        
+        content_str = str(content)
+        
+        # Try standard encoding first
+        try:
+            result = self.encode_anything(content_str, domain)
+            return {
+                "status": "success",
+                "method": "standard",
+                "result": result,
+            }
+        except Exception as e:
+            logger.info(f"Standard encoding failed: {e}")
+            
+            # Try auto-learning
+            if not self.enable_auto_learning:
+                raise
+            
+            logger.info("🔍 Attempting auto-learning...")
+            
+            # Detect unknown concept
+            unknown_concept = self.auto_learner.detect_unknown_concept(content_str)
+            
+            if not unknown_concept:
+                raise ValueError("Could not detect unknown concept for auto-learning")
+            
+            logger.info(f"Detected unknown concept: {unknown_concept}")
+            
+            # Learn domain
+            new_domain = self.auto_learner.learn_domain(unknown_concept)
+            
+            if not new_domain:
+                raise ValueError(f"Could not learn domain for: {unknown_concept}")
+            
+            logger.info(f"✅ Successfully learned domain: {new_domain.name}")
+            
+            # Encode with new domain
+            result = new_domain.encode(content_str)
+            
+            return {
+                "status": "success",
+                "method": "auto_learning",
+                "domain": new_domain.name,
+                "concept": unknown_concept,
+                "result": result,
+            }
     
     def encode_anything(
         self,
