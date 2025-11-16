@@ -3,7 +3,7 @@
  * Handles all interactions with the unified backend API
  */
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "http://localhost:8081";
 const API_TIMEOUT = 10000;
 
 // ============================================================================
