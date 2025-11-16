@@ -15,10 +15,13 @@ This module is the "meta-layer" that makes GLM truly extensible.
 """
 
 import logging
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, TYPE_CHECKING
 import numpy as np
 import networkx as nx
 import re
+
+if TYPE_CHECKING:
+    from numtriad.encoder import NumTriadEncoder
 
 logger = logging.getLogger(__name__)
 
@@ -159,6 +162,8 @@ class LearnedDomain:
     """
     Dynamically created domain from learned knowledge.
     Integrates with SymbolicRepresentation (∆∞Ο).
+    
+    Can optionally use NumTriadEncoder for ω (Omega) embeddings.
     """
     
     def __init__(
@@ -166,13 +171,17 @@ class LearnedDomain:
         concept_name: str,
         knowledge: Dict[str, Any],
         embedding_dim: int = 128,
+        numtriad_encoder: Optional["NumTriadEncoder"] = None,
     ):
         self.concept_name = concept_name
         self.knowledge = knowledge
         self.embedding_dim = embedding_dim
+        self.numtriad_encoder = numtriad_encoder
         self.name = f"{concept_name.lower().replace(' ', '_')}_domain"
         
         logger.info(f"Created LearnedDomain: {self.name}")
+        if numtriad_encoder:
+            logger.info(f"  └─ Using NumTriad encoder for embeddings")
     
     def has_notion_of(self, concept: str) -> bool:
         """Check if domain has notion of a concept"""
@@ -187,19 +196,26 @@ class LearnedDomain:
         """
         Encode object into SymbolicRepresentation (∆∞Ο).
         
+        Uses NumTriad encoder if available for ω (Omega) embeddings.
+        
         Returns:
             {
-                "delta": np.ndarray,      # Specificity
+                "delta": np.ndarray,      # Specificity (from triad or keywords)
                 "infinity": nx.Graph,     # Generality (concept graph)
-                "omega": np.ndarray,      # Context
+                "omega": np.ndarray,      # Context (NumTriad or BoW)
                 "metadata": dict
             }
         """
         text = str(obj)
         
-        delta = self._extract_delta(text)
+        # ∞ : graphe conceptuel (reste symbolique)
         infinity = self._build_concept_graph(text)
-        omega = self._create_omega(text)
+        
+        # ω + triade via NumTriad si dispo, sinon fallback BoW
+        omega, triad = self._encode_with_numtriad_or_bow(text)
+        
+        # ∆ : dérivée de la triade (composante Δ̂)
+        delta = self._make_delta_from_triad(triad)
         
         return {
             "delta": delta,
@@ -211,12 +227,50 @@ class LearnedDomain:
                 "learned": True,
                 "description": self.knowledge.get("description", ""),
                 "source": self.knowledge.get("source", "unknown"),
+                "triad": {
+                    "delta_hat": float(triad[0]),
+                    "infty_hat": float(triad[1]),
+                    "theta_hat": float(triad[2]),
+                },
+                "numtriad_used": self.numtriad_encoder is not None,
             },
         }
     
     def decode(self, symbolic: Dict[str, Any]) -> str:
         """Decode symbolic representation back to text"""
         return f"{self.concept_name} representation (auto-learned)"
+    
+    # ========================================================================
+    # NUMTRIAD + FALLBACK
+    # ========================================================================
+    
+    def _encode_with_numtriad_or_bow(self, text: str) -> tuple:
+        """
+        Retourne (omega, triad) :
+          - si NumTriad dispo : embeddings + triad_scores
+          - sinon : BoW + triade neutre
+        """
+        if self.numtriad_encoder is not None:
+            try:
+                emb, triads = self.numtriad_encoder.encode_text([text])
+                omega = emb[0]             # (D,)
+                triad = triads[0]          # (3,)
+                logger.debug(f"NumTriad encoding: triad={triad}")
+                return omega, triad
+            except Exception as e:
+                logger.warning(f"⚠️ NumTriad error in LearnedDomain: {e}")
+        
+        # Fallback BoW
+        omega = self._create_omega_bow(text)
+        triad = np.array([1/3, 1/3, 1/3], dtype=np.float32)
+        return omega, triad
+    
+    def _make_delta_from_triad(self, triad: np.ndarray) -> np.ndarray:
+        """
+        ∆ : on projette la triade dans un petit vecteur ∆,
+        ici on garde juste les 3 composantes (Δ, ∞, Θ).
+        """
+        return triad.astype(np.float32)
     
     # ========================================================================
     # SYMBOLIC REPRESENTATION COMPONENTS
@@ -300,17 +354,25 @@ class AutoLearningEngine:
       2. Gather knowledge from multiple sources
       3. Create domain templates
       4. Register with SymbolicEngine
+    
+    Can optionally use NumTriadEncoder for learned domain embeddings.
     """
     
-    def __init__(self, symbolic_engine):
+    def __init__(
+        self,
+        symbolic_engine,
+        numtriad_encoder: Optional["NumTriadEncoder"] = None
+    ):
         """
         Initialize AutoLearningEngine.
         
         Args:
             symbolic_engine: SymbolicEngine instance to register domains with
+            numtriad_encoder: Optional NumTriadEncoder for learned domains
         """
         self.engine = symbolic_engine
         self.learned_domains: Dict[str, LearnedDomain] = {}
+        self.numtriad_encoder = numtriad_encoder
         
         self.knowledge_sources = [
             WikipediaSource(),
@@ -320,6 +382,8 @@ class AutoLearningEngine:
         ]
         
         logger.info("AutoLearningEngine initialized")
+        if numtriad_encoder:
+            logger.info("  └─ NumTriad encoder available for learned domains")
     
     def detect_unknown_concept(self, text: str) -> Optional[str]:
         """
@@ -371,8 +435,12 @@ class AutoLearningEngine:
             logger.warning(f"Could not gather knowledge about: {concept}")
             return None
         
-        # Create domain
-        domain = LearnedDomain(concept, knowledge)
+        # Create domain (with NumTriad encoder if available)
+        domain = LearnedDomain(
+            concept,
+            knowledge,
+            numtriad_encoder=self.numtriad_encoder
+        )
         
         # Register with engine
         self.engine.register_domain(domain)

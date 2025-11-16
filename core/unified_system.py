@@ -26,12 +26,15 @@ logger = logging.getLogger(__name__)
 try:
     from core.symbolic import SymbolicEngine
     from core.auto_learning import AutoLearningEngine, integrate_auto_learning
+    from numtriad.encoder import NumTriadEncoder
     SYMBOLIC_AVAILABLE = True
     AUTO_LEARNING_AVAILABLE = True
+    NUMTRIAD_ENCODER_AVAILABLE = True
 except ImportError:
     SYMBOLIC_AVAILABLE = False
     AUTO_LEARNING_AVAILABLE = False
-    logger.warning("SymbolicEngine or AutoLearningEngine not available")
+    NUMTRIAD_ENCODER_AVAILABLE = False
+    logger.warning("SymbolicEngine, AutoLearningEngine, or NumTriadEncoder not available")
 
 try:
     from numtriad.core.system_v4 import NumTriadSystemV4, NumTriadSystemConfig
@@ -162,6 +165,15 @@ class UnifiedGLM:
         
         logger.info("Initializing Unified GLM v4.0...")
         
+        # Initialize NumTriad Encoder (for learned domains)
+        self.numtriad_encoder = None
+        if NUMTRIAD_ENCODER_AVAILABLE:
+            try:
+                self.numtriad_encoder = NumTriadEncoder(model_name="numtriad-v3")
+                logger.info("✅ NumTriadEncoder initialized")
+            except Exception as e:
+                logger.warning(f"Failed to initialize NumTriadEncoder: {e}")
+        
         # Initialize GLM SymbolicEngine
         self.symbolic_engine = None
         self.auto_learner = None
@@ -170,11 +182,16 @@ class UnifiedGLM:
                 self.symbolic_engine = SymbolicEngine()
                 logger.info("✅ SymbolicEngine initialized")
                 
-                # Initialize AutoLearningEngine
+                # Initialize AutoLearningEngine (with NumTriad encoder if available)
                 if AUTO_LEARNING_AVAILABLE and self.enable_auto_learning:
                     try:
-                        self.auto_learner = integrate_auto_learning(self.symbolic_engine)
+                        self.auto_learner = AutoLearningEngine(
+                            self.symbolic_engine,
+                            numtriad_encoder=self.numtriad_encoder
+                        )
                         logger.info("✅ AutoLearningEngine integrated")
+                        if self.numtriad_encoder:
+                            logger.info("   └─ With NumTriad encoder for learned domains")
                     except Exception as e:
                         logger.warning(f"Failed to integrate AutoLearningEngine: {e}")
             except Exception as e:
