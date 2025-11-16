@@ -3,194 +3,775 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GLM v3.0 - Symbolic Transformation System ∆∞Θ</title>
-    <link rel="stylesheet" href="style.css">
+    <title>GLM v4.0 - Unified System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            transition: background 0.3s;
+        }
+        
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        body.dark-mode .header {
+            background: #2a2a3e;
+            border-left-color: #8b9dff;
+            color: #e0e0e0;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        body.dark-mode .header h1 {
+            color: #8b9dff;
+        }
+        
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        
+        body.dark-mode .header p {
+            color: #aaa;
+        }
+        
+        .status-bar {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+        
+        body.dark-mode .status-item {
+            background: #3a3a4e;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ef4444;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-dot.online {
+            background: #10b981;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .theme-toggle {
+            background: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        body.dark-mode .theme-toggle {
+            background: #2a2a3e;
+            color: #8b9dff;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 12px 24px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        body.dark-mode .tab-button {
+            background: #2a2a3e;
+            color: #aaa;
+        }
+        
+        .tab-button:hover {
+            background: #f0f0f0;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        body.dark-mode .tab-button:hover {
+            background: #3a3a4e;
+            color: #8b9dff;
+        }
+        
+        .tab-button.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .mode-content {
+            display: none;
+        }
+        
+        .mode-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+        }
+        
+        body.dark-mode .card {
+            background: #2a2a3e;
+            border-left-color: #8b9dff;
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        body.dark-mode .card h2 {
+            color: #8b9dff;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        body.dark-mode .input-group label {
+            color: #e0e0e0;
+        }
+        
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: all 0.3s;
+            background: white;
+            color: #333;
+        }
+        
+        body.dark-mode .input-group input,
+        body.dark-mode .input-group textarea,
+        body.dark-mode .input-group select {
+            background: #3a3a4e;
+            border-color: #4a4a5e;
+            color: #e0e0e0;
+        }
+        
+        .input-group input:focus,
+        .input-group textarea:focus,
+        .input-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .input-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .result-box {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+            min-height: 100px;
+        }
+        
+        body.dark-mode .result-box {
+            background: #3a3a4e;
+            border-color: #4a4a5e;
+        }
+        
+        .result-box.success {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+        
+        body.dark-mode .result-box.success {
+            background: rgba(16, 185, 129, 0.1);
+        }
+        
+        .result-box.error {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+        
+        body.dark-mode .result-box.error {
+            background: rgba(239, 68, 68, 0.1);
+        }
+        
+        .triad-display {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .triad-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .triad-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .triad-value {
+            font-size: 2em;
+            font-weight: 700;
+        }
+        
+        .triad-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .triad-bar-fill {
+            height: 100%;
+            background: white;
+            border-radius: 3px;
+            transition: width 0.5s;
+        }
+        
+        .search-results {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .result-item {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+        
+        body.dark-mode .result-item {
+            background: #3a3a4e;
+            border-color: #4a4a5e;
+        }
+        
+        .result-item:hover {
+            border-color: #667eea;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+        }
+        
+        .result-item h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        body.dark-mode .result-item h4 {
+            color: #8b9dff;
+        }
+        
+        .result-item p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        
+        body.dark-mode .result-item p {
+            color: #aaa;
+        }
+        
+        .score-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            animation: slideDown 0.3s;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .alert.show {
+            display: block;
+        }
+        
+        .alert.success {
+            background: #d1fae5;
+            border: 2px solid #10b981;
+            color: #065f46;
+        }
+        
+        .alert.error {
+            background: #fee2e2;
+            border: 2px solid #ef4444;
+            color: #7f1d1d;
+        }
+        
+        .alert.info {
+            background: #dbeafe;
+            border: 2px solid #3b82f6;
+            color: #1e3a8a;
+        }
+        
+        .footer {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        body.dark-mode .footer {
+            background: #2a2a3e;
+            color: #aaa;
+        }
+        
+        .graph-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        
+        body.dark-mode .graph-container {
+            background: #3a3a4e;
+        }
+        
+        .similarity-bar {
+            width: 100%;
+            height: 30px;
+            background: #e5e7eb;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        
+        body.dark-mode .similarity-bar {
+            background: #4a4a5e;
+        }
+        
+        .similarity-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab-button {
+                width: 100%;
+            }
+            
+            .triad-display {
+                grid-template-columns: 1fr;
+            }
+            
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1>🚀 GLM v3.0</h1>
-                <p>General Language Model - Transform concepts across domains using ∆∞Θ</p>
-                <div id="apiStatus" class="api-status offline">⏳ Checking API...</div>
+        <div class="header">
+            <div>
+                <h1>🚀 GLM v4.0</h1>
+                <p>Unified Multimodal System with Triad-Aware Processing</p>
             </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main">
-            <!-- Mode Tabs -->
-            <section class="section">
-                <div class="mode-tabs">
-                    <button class="tab-button active" onclick="switchMode('transform')">
-                        🔄 Transform Mode
-                    </button>
-                    <button class="tab-button" onclick="switchMode('chat')">
-                        💬 Chat Mode
-                    </button>
-                    <button class="tab-button" onclick="switchMode('unified')">
-                        🔍 Unified Search
-                    </button>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-dot offline" id="statusDot"></span>
+                    <span id="statusText">Checking API...</span>
                 </div>
-            </section>
-
-            <!-- Alert Messages -->
-            <div id="alert"></div>
-
-            <!-- Transform Mode Content -->
-            <div id="transformMode" class="mode-content active">
-                <!-- Domain Selector -->
-                <section class="section">
-                    <h2>📊 Select Domains</h2>
-                    <div class="domain-selectors">
-                        <div class="domain-selector">
-                            <label for="sourceDomain">Source Domain:</label>
-                            <select id="sourceDomain">
-                                <option value="text">📝 Text (Natural Language)</option>
-                                <option value="code">💻 Code (Python AST)</option>
-                                <option value="geometry">🔺 Geometry (Triangle, Circle, Polygon)</option>
-                                <option value="image">🖼️ Image (Visual Features)</option>
-                            </select>
-                        </div>
-                        <div class="domain-selector">
-                            <label for="targetDomain">Target Domain:</label>
-                            <select id="targetDomain">
-                                <option value="code">💻 Code (Python AST)</option>
-                                <option value="text">📝 Text (Natural Language)</option>
-                                <option value="geometry">🔺 Geometry (Triangle, Circle, Polygon)</option>
-                                <option value="image">🖼️ Image (Visual Features)</option>
-                            </select>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Input Panel -->
-                <section class="section">
-                    <h2>✍️ Input Content</h2>
-                    <div class="input-panel">
-                        <div id="inputContainer" class="input-container">
-                            <textarea id="textInput" placeholder="Enter text..." class="input-field">Artificial intelligence is revolutionizing technology.</textarea>
-                        </div>
-                        <button id="transformBtn" class="btn btn-primary">🔄 Transform</button>
-                    </div>
-                </section>
-
-                <!-- Results Panel -->
-                <section class="section">
-                    <h2>📊 Results</h2>
-                    <div class="results-panel">
-                        <div class="result-item">
-                            <h3>Transformed Content</h3>
-                            <div id="resultContent" class="result-content">
-                                <p class="placeholder">Results will appear here...</p>
-                            </div>
-                        </div>
-
-                        <div class="result-item">
-                            <h3>Symbolic Representation ∆∞Θ</h3>
-                            <div id="symbolicInfo" class="symbolic-info">
-                                <p class="placeholder">Symbolic data will appear here...</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Similarity Section -->
-                <section class="section">
-                    <h2>📊 Compute Similarity</h2>
-                    <div class="similarity-panel">
-                        <div class="similarity-inputs">
-                            <div class="input-group">
-                                <label for="similarityInput1">First Content</label>
-                                <textarea id="similarityInput1" placeholder="Enter first content..." class="input-field">Machine learning</textarea>
-                            </div>
-                            <div class="input-group">
-                                <label for="similarityInput2">Second Content</label>
-                                <textarea id="similarityInput2" placeholder="Enter second content..." class="input-field">Artificial intelligence</textarea>
-                            </div>
-                        </div>
-                        <button id="similarityBtn" class="btn btn-primary">📊 Calculate Similarity</button>
-                        <div id="similarityResult" class="result-content">
-                            <p class="placeholder">Similarity results will appear here...</p>
-                        </div>
-                    </div>
-                </section>
+                <button class="theme-toggle" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
+        </div>
 
-            <!-- Chat Mode Content -->
-            <div id="chatMode" class="mode-content">
-                <section class="section">
-                    <h2>💬 Chat with GLM</h2>
-                    <div class="chat-panel">
-                        <div id="chatMessages" class="chat-messages">
-                            <div class="message system">
-                                <p>Welcome to GLM Chat! Ask me anything about transformations, domains, or symbolic representations.</p>
-                            </div>
-                        </div>
-                        <div class="chat-input-area">
-                            <textarea id="chatInput" placeholder="Type your message..." class="chat-input"></textarea>
-                            <button id="chatBtn" class="btn btn-primary">Send 💬</button>
-                        </div>
-                    </div>
-                </section>
-            </div>
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="switchTab('encode', event)">
+                <i class="fas fa-code"></i> Encode
+            </button>
+            <button class="tab-button" onclick="switchTab('search', event)">
+                <i class="fas fa-search"></i> Search
+            </button>
+            <button class="tab-button" onclick="switchTab('qa', event)">
+                <i class="fas fa-comments"></i> Q&A
+            </button>
+            <button class="tab-button" onclick="switchTab('transform', event)">
+                <i class="fas fa-exchange-alt"></i> Transform
+            </button>
+            <button class="tab-button" onclick="switchTab('similarity', event)">
+                <i class="fas fa-chart-line"></i> Similarity
+            </button>
+        </div>
 
-            <!-- Unified Search Mode -->
-            <div id="unifiedMode" class="mode-content">
-                <section class="section">
-                    <h2>🔍 Unified Search & Answer</h2>
-                    <div class="unified-panel">
-                        <div class="search-area">
-                            <div class="input-group">
-                                <label for="searchQuery">Search Query</label>
-                                <input type="text" id="searchQuery" placeholder="Enter your search query..." class="input-field">
-                            </div>
-                            <div class="input-group">
-                                <label for="triadTarget">Triad Target Mode</label>
-                                <select id="triadTarget">
-                                    <option value="auto">Auto</option>
-                                    <option value="abstract">Abstract (∆)</option>
-                                    <option value="concrete">Concrete (Θ)</option>
-                                    <option value="balanced">Balanced (∞)</option>
-                                </select>
-                            </div>
-                            <button id="searchBtn" class="btn btn-primary">🔍 Search</button>
-                        </div>
+        <!-- Alert -->
+        <div id="alert" class="alert"></div>
 
-                        <div id="searchResults" class="search-results">
-                            <p class="placeholder">Search results will appear here...</p>
-                        </div>
-
-                        <div class="answer-area">
-                            <h3>Generate Answer</h3>
-                            <button id="answerBtn" class="btn btn-primary">📝 Generate Answer</button>
-                            <div id="answerResult" class="result-content">
-                                <p class="placeholder">Answer will appear here...</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- API Information -->
-            <section class="section">
-                <h2>📖 API Information</h2>
-                <div class="api-info">
-                    <p><strong>Backend URL:</strong> http://localhost:8081</p>
-                    <p><strong>API Docs:</strong> <a href="http://localhost:8081/docs" target="_blank" rel="noopener noreferrer">http://localhost:8081/docs</a></p>
-                    <p><strong>ReDoc:</strong> <a href="http://localhost:8081/redoc" target="_blank" rel="noopener noreferrer">http://localhost:8081/redoc</a></p>
-                    <p><strong>Health Check:</strong> <a href="http://localhost:8081/health" target="_blank" rel="noopener noreferrer">http://localhost:8081/health</a></p>
+        <!-- ENCODE TAB -->
+        <div id="encode" class="mode-content active">
+            <div class="card">
+                <h2><i class="fas fa-code"></i> Universal Encoding</h2>
+                <div class="input-group">
+                    <label for="encodeInput">Content to Encode</label>
+                    <textarea id="encodeInput" placeholder="Enter text, code, or any content...">Hello, world!</textarea>
                 </div>
-            </section>
-        </main>
+                <div class="input-group">
+                    <label for="encodeDomain">Domain</label>
+                    <select id="encodeDomain">
+                        <option value="auto">Auto-detect</option>
+                        <option value="text">Text</option>
+                        <option value="code">Code</option>
+                        <option value="image">Image</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" onclick="encodeContent()">
+                    <i class="fas fa-bolt"></i> Encode
+                </button>
+                <div id="encodeResult" class="result-box" style="display:none;">
+                    <h4>Embedding Result</h4>
+                    <p id="encodeResultText"></p>
+                    <div id="encodeTriad" class="triad-display"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCH TAB -->
+        <div id="search" class="mode-content">
+            <div class="card">
+                <h2><i class="fas fa-search"></i> Intelligent Search</h2>
+                <div class="input-group">
+                    <label for="searchQuery">Search Query</label>
+                    <input type="text" id="searchQuery" placeholder="Enter your search query...">
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="searchMode">Search Mode</label>
+                        <select id="searchMode">
+                            <option value="auto">Auto</option>
+                            <option value="abstract">Abstract (∞)</option>
+                            <option value="concrete">Concrete (Θ)</option>
+                            <option value="balanced">Balanced (∆)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="searchK">Results Count</label>
+                        <input type="number" id="searchK" value="5" min="1" max="20">
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="performSearch()">
+                    <i class="fas fa-search"></i> Search
+                </button>
+                <div id="searchResults" class="search-results" style="display:none;">
+                    <h4>Results</h4>
+                    <div id="searchResultsList"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q&A TAB -->
+        <div id="qa" class="mode-content">
+            <div class="card">
+                <h2><i class="fas fa-comments"></i> Q&A Pipeline</h2>
+                <div class="input-group">
+                    <label for="qaQuery">Question</label>
+                    <textarea id="qaQuery" placeholder="Ask a question..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="qaContext">Context Documents</label>
+                    <input type="number" id="qaContext" value="5" min="1" max="20">
+                </div>
+                <button class="btn btn-primary" onclick="generateAnswer()">
+                    <i class="fas fa-lightbulb"></i> Generate Answer
+                </button>
+                <div id="qaResult" class="result-box" style="display:none;">
+                    <h4>Answer</h4>
+                    <p id="qaResultText"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSFORM TAB -->
+        <div id="transform" class="mode-content">
+            <div class="card">
+                <h2><i class="fas fa-exchange-alt"></i> Domain Transformation</h2>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="transformFrom">From Domain</label>
+                        <select id="transformFrom">
+                            <option value="text">Text</option>
+                            <option value="code">Code</option>
+                            <option value="geometry">Geometry</option>
+                            <option value="image">Image</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="transformTo">To Domain</label>
+                        <select id="transformTo">
+                            <option value="code">Code</option>
+                            <option value="text">Text</option>
+                            <option value="geometry">Geometry</option>
+                            <option value="image">Image</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="transformInput">Content</label>
+                    <textarea id="transformInput" placeholder="Enter content to transform..."></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="transformContent()">
+                    <i class="fas fa-magic"></i> Transform
+                </button>
+                <div id="transformResult" class="result-box" style="display:none;">
+                    <h4>Transformed Content</h4>
+                    <p id="transformResultText"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIMILARITY TAB -->
+        <div id="similarity" class="mode-content">
+            <div class="card">
+                <h2><i class="fas fa-chart-line"></i> Semantic Similarity</h2>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="sim1">First Content</label>
+                        <textarea id="sim1" placeholder="Enter first content...">Machine learning</textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="sim2">Second Content</label>
+                        <textarea id="sim2" placeholder="Enter second content...">Neural networks</textarea>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="computeSimilarity()">
+                    <i class="fas fa-calculator"></i> Calculate
+                </button>
+                <div id="similarityResult" class="result-box" style="display:none;">
+                    <h4>Similarity Score</h4>
+                    <div style="font-size: 2em; font-weight: 700; color: #667eea; margin: 20px 0;">
+                        <span id="similarityScore">0.00</span>
+                    </div>
+                    <div class="similarity-bar">
+                        <div id="similarityBar" class="similarity-bar-fill" style="width: 0%;">
+                            <span id="similarityPercent">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
-        <footer class="footer">
-            <p>GLM v3.0 - General Language Model | Backend: Python FastAPI | Frontend: HTML5 + JavaScript</p>
-            <p class="footer-note">Make sure the backend is running: <code>python backend.py</code></p>
-        </footer>
+        <div class="footer">
+            <p><strong>GLM v4.0</strong> - Unified System | Backend: FastAPI | Frontend: HTML5 + JavaScript</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Make sure backend is running: <code>python backend.py</code></p>
+        </div>
     </div>
 
-    <script src="app_complete.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -1,565 +1,368 @@
 /**
- * GLM v3.0 - Complete Web UI Application
- * =======================================
- * 
- * Full-featured application with Transform, Chat, and Unified Search modes
+ * GLM v4.0 Web UI - Complete Application Logic
+ * Handles all interactions with the unified backend API
  */
 
-// Configuration
-const API_BASE_URL = 'http://localhost:8081';
-const REFRESH_INTERVAL = 5000;
-
-// State
-let currentState = {
-    mode: 'transform',
-    sourceDomain: 'text',
-    targetDomain: 'code',
-    content: '',
-    apiOnline: false,
-    chatMessages: []
-};
-
-// ============================================================================
-// INITIALIZATION
-// ============================================================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚀 GLM Web UI Initialized');
-    console.log(`📍 API Base URL: ${API_BASE_URL}`);
-    
-    // Setup event listeners
-    setupEventListeners();
-    
-    // Check API status
-    checkAPIStatus();
-    setInterval(checkAPIStatus, REFRESH_INTERVAL);
-    
-    // Initialize UI
-    updateInputContainer();
-});
-
-// ============================================================================
-// API STATUS CHECK
-// ============================================================================
-
-async function checkAPIStatus() {
-    try {
-        const response = await fetch(`${API_BASE_URL}/health`, {
-            method: 'GET',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            mode: 'cors',
-            credentials: 'omit'
-        });
-        
-        if (response.ok) {
-            const data = await response.json();
-            console.log('✅ API Response:', data);
-            currentState.apiOnline = true;
-            updateAPIStatus(true);
-        } else {
-            console.warn('⚠️ API returned status:', response.status);
-            currentState.apiOnline = false;
-            updateAPIStatus(false);
-        }
-    } catch (error) {
-        console.error('❌ API Connection Error:', error.message);
-        currentState.apiOnline = false;
-        updateAPIStatus(false);
-    }
-}
-
-function updateAPIStatus(online) {
-    const statusEl = document.getElementById('apiStatus');
-    if (!statusEl) return;
-    
-    if (online) {
-        statusEl.innerHTML = '✅ API Online';
-        statusEl.className = 'api-status online';
-    } else {
-        statusEl.innerHTML = '❌ API Offline';
-        statusEl.className = 'api-status offline';
-    }
-}
-
-// ============================================================================
-// MODE SWITCHING
-// ============================================================================
-
-function switchMode(mode) {
-    currentState.mode = mode;
-    
-    // Hide all modes
-    document.getElementById('transformMode').classList.remove('active');
-    document.getElementById('chatMode').classList.remove('active');
-    document.getElementById('unifiedMode').classList.remove('active');
-    
-    // Show selected mode
-    document.getElementById(mode + 'Mode').classList.add('active');
-    
-    // Update tab buttons
-    document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    event.target.classList.add('active');
-}
-
-// ============================================================================
-// EVENT LISTENERS
-// ============================================================================
-
-function setupEventListeners() {
-    // Transform mode
-    const sourceDomain = document.getElementById('sourceDomain');
-    const targetDomain = document.getElementById('targetDomain');
-    const transformBtn = document.getElementById('transformBtn');
-    const similarityBtn = document.getElementById('similarityBtn');
-    
-    if (sourceDomain) {
-        sourceDomain.addEventListener('change', (e) => {
-            currentState.sourceDomain = e.target.value;
-            updateInputContainer();
-        });
-    }
-    
-    if (targetDomain) {
-        targetDomain.addEventListener('change', (e) => {
-            currentState.targetDomain = e.target.value;
-        });
-    }
-    
-    if (transformBtn) {
-        transformBtn.addEventListener('click', performTransform);
-    }
-    
-    if (similarityBtn) {
-        similarityBtn.addEventListener('click', performSimilarity);
-    }
-    
-    // Chat mode
-    const chatBtn = document.getElementById('chatBtn');
-    const chatInput = document.getElementById('chatInput');
-    
-    if (chatBtn) {
-        chatBtn.addEventListener('click', sendChatMessage);
-    }
-    
-    if (chatInput) {
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendChatMessage();
-            }
-        });
-    }
-    
-    // Unified search
-    const searchBtn = document.getElementById('searchBtn');
-    const answerBtn = document.getElementById('answerBtn');
-    
-    if (searchBtn) {
-        searchBtn.addEventListener('click', performSearch);
-    }
-    
-    if (answerBtn) {
-        answerBtn.addEventListener('click', generateAnswer);
-    }
-}
-
-// ============================================================================
-// TRANSFORM MODE
-// ============================================================================
-
-async function performTransform() {
-    if (!currentState.apiOnline) {
-        showError('❌ API is not online');
-        return;
-    }
-    
-    if (!currentState.content.trim()) {
-        showError('Please enter content to transform.');
-        return;
-    }
-    
-    const btn = document.getElementById('transformBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<span class="loading"></span> Transforming...';
-    
-    try {
-        const payload = {
-            content: currentState.content,
-            source_domain: currentState.sourceDomain,
-            target_domain: currentState.targetDomain
-        };
-        
-        const response = await fetch(`${API_BASE_URL}/transform`, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            mode: 'cors',
-            credentials: 'omit',
-            body: JSON.stringify(payload)
-        });
-        
-        if (response.ok) {
-            const data = await response.json();
-            displayTransformResult(data);
-            showSuccess('✅ Transformation completed!');
-        } else {
-            const error = await response.json();
-            showError(`❌ Error: ${error.detail || 'Unknown error'}`);
-        }
-    } catch (error) {
-        showError(`❌ Error: ${error.message}`);
-    } finally {
-        btn.disabled = false;
-        btn.innerHTML = '🔄 Transform';
-    }
-}
-
-async function performSimilarity() {
-    if (!currentState.apiOnline) {
-        showError('❌ API is not online');
-        return;
-    }
-    
-    const content1 = document.getElementById('similarityInput1')?.value.trim();
-    const content2 = document.getElementById('similarityInput2')?.value.trim();
-    
-    if (!content1 || !content2) {
-        showError('Please enter both contents.');
-        return;
-    }
-    
-    const btn = document.getElementById('similarityBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<span class="loading"></span> Calculating...';
-    
-    try {
-        const payload = {
-            content1: content1,
-            content2: content2,
-            domain: currentState.sourceDomain
-        };
-        
-        const response = await fetch(`${API_BASE_URL}/similarity`, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            mode: 'cors',
-            credentials: 'omit',
-            body: JSON.stringify(payload)
-        });
-        
-        if (response.ok) {
-            const data = await response.json();
-            displaySimilarityResult(data);
-            showSuccess('✅ Similarity calculated!');
-        } else {
-            const error = await response.json();
-            showError(`❌ Error: ${error.detail || 'Unknown error'}`);
-        }
-    } catch (error) {
-        showError(`❌ Error: ${error.message}`);
-    } finally {
-        btn.disabled = false;
-        btn.innerHTML = '📊 Calculate Similarity';
-    }
-}
-
-function updateInputContainer() {
-    const container = document.getElementById('inputContainer');
-    if (!container) return;
-    
-    const domain = currentState.sourceDomain;
-    let placeholder = 'Enter content...';
-    let defaultValue = '';
-    
-    switch(domain) {
-        case 'code':
-            placeholder = 'Enter Python code...';
-            defaultValue = 'def hello(name):\n    return f"Hello, {name}!"';
-            break;
-        case 'text':
-            placeholder = 'Enter text...';
-            defaultValue = 'Artificial intelligence is revolutionizing technology.';
-            break;
-        case 'geometry':
-            placeholder = 'Enter geometry description...';
-            defaultValue = 'triangle';
-            break;
-        case 'image':
-            placeholder = 'Enter image description...';
-            defaultValue = 'A red square on a white background';
-            break;
-    }
-    
-    container.innerHTML = `<textarea id="textInput" placeholder="${placeholder}" class="input-field">${defaultValue}</textarea>`;
-    
-    const textInput = document.getElementById('textInput');
-    if (textInput) {
-        textInput.addEventListener('input', (e) => {
-            currentState.content = e.target.value;
-        });
-    }
-}
-
-function displayTransformResult(data) {
-    const resultContent = document.getElementById('resultContent');
-    if (!resultContent) return;
-    
-    resultContent.innerHTML = `
-        <div class="result-section">
-            <pre>${escapeHtml(data.result)}</pre>
-        </div>
-    `;
-    
-    const symbolicInfo = document.getElementById('symbolicInfo');
-    if (symbolicInfo) {
-        symbolicInfo.innerHTML = `
-            <div class="triad-display">
-                <p><strong>Triad (∆∞Θ):</strong></p>
-                <ul>
-                    <li>Delta (∆): ${(data.triad.delta * 100).toFixed(1)}%</li>
-                    <li>Infinity (∞): ${(data.triad.infinity * 100).toFixed(1)}%</li>
-                    <li>Theta (Θ): ${(data.triad.theta * 100).toFixed(1)}%</li>
-                </ul>
-            </div>
-        `;
-    }
-}
-
-function displaySimilarityResult(data) {
-    const resultContent = document.getElementById('similarityResult');
-    if (!resultContent) return;
-    
-    resultContent.innerHTML = `
-        <div class="result-section">
-            <p><strong>Similarity Score:</strong> ${(data.similarity * 100).toFixed(1)}%</p>
-            <div class="score-bar">
-                <div class="score-fill" style="width: ${data.similarity * 100}%"></div>
-            </div>
-        </div>
-    `;
-}
-
-// ============================================================================
-// CHAT MODE
-// ============================================================================
-
-function sendChatMessage() {
-    const input = document.getElementById('chatInput');
-    if (!input) return;
-    
-    const message = input.value.trim();
-    if (!message) return;
-    
-    // Add user message
-    addChatMessage('user', message);
-    input.value = '';
-    
-    // Simulate bot response
-    setTimeout(() => {
-        const responses = [
-            'That\'s a great question about GLM transformations!',
-            'The ∆∞Θ triad represents different abstraction levels.',
-            'You can transform content between text, code, geometry, and image domains.',
-            'Try using the Transform Mode to see symbolic representations.',
-            'The Unified Search mode helps find relevant documents with triad-aware ranking.'
-        ];
-        const response = responses[Math.floor(Math.random() * responses.length)];
-        addChatMessage('bot', response);
-    }, 500);
-}
-
-function addChatMessage(sender, text) {
-    const messagesDiv = document.getElementById('chatMessages');
-    if (!messagesDiv) return;
-    
-    const messageEl = document.createElement('div');
-    messageEl.className = `message ${sender}`;
-    messageEl.innerHTML = `<p>${escapeHtml(text)}</p>`;
-    messagesDiv.appendChild(messageEl);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-}
-
-// ============================================================================
-// UNIFIED SEARCH MODE
-// ============================================================================
-
-async function performSearch() {
-    if (!currentState.apiOnline) {
-        showError('❌ API is not online');
-        return;
-    }
-    
-    const query = document.getElementById('searchQuery')?.value.trim();
-    if (!query) {
-        showError('Please enter a search query.');
-        return;
-    }
-    
-    const btn = document.getElementById('searchBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<span class="loading"></span> Searching...';
-    
-    try {
-        const payload = {
-            query: query,
-            k: 5,
-            triad_target: document.getElementById('triadTarget')?.value || 'auto'
-        };
-        
-        const response = await fetch(`${API_BASE_URL}/unified/search`, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            mode: 'cors',
-            credentials: 'omit',
-            body: JSON.stringify(payload)
-        });
-        
-        if (response.ok) {
-            const data = await response.json();
-            displaySearchResults(data);
-            showSuccess('✅ Search completed!');
-        } else {
-            const error = await response.json();
-            showError(`❌ Error: ${error.detail || 'Unknown error'}`);
-        }
-    } catch (error) {
-        showError(`❌ Error: ${error.message}`);
-    } finally {
-        btn.disabled = false;
-        btn.innerHTML = '🔍 Search';
-    }
-}
-
-async function generateAnswer() {
-    if (!currentState.apiOnline) {
-        showError('❌ API is not online');
-        return;
-    }
-    
-    const query = document.getElementById('searchQuery')?.value.trim();
-    if (!query) {
-        showError('Please enter a query first.');
-        return;
-    }
-    
-    const btn = document.getElementById('answerBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<span class="loading"></span> Generating...';
-    
-    try {
-        const payload = {
-            query: query,
-            k: 5,
-            triad_target_mode: document.getElementById('triadTarget')?.value || 'auto'
-        };
-        
-        const response = await fetch(`${API_BASE_URL}/unified/answer`, {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            mode: 'cors',
-            credentials: 'omit',
-            body: JSON.stringify(payload)
-        });
-        
-        if (response.ok) {
-            const data = await response.json();
-            displayAnswer(data);
-            showSuccess('✅ Answer generated!');
-        } else {
-            const error = await response.json();
-            showError(`❌ Error: ${error.detail || 'Unknown error'}`);
-        }
-    } catch (error) {
-        showError(`❌ Error: ${error.message}`);
-    } finally {
-        btn.disabled = false;
-        btn.innerHTML = '📝 Generate Answer';
-    }
-}
-
-function displaySearchResults(data) {
-    const resultsDiv = document.getElementById('searchResults');
-    if (!resultsDiv) return;
-    
-    let html = '<div class="search-results-list">';
-    if (data.results && data.results.length > 0) {
-        data.results.forEach((result, i) => {
-            html += `
-                <div class="search-result-item">
-                    <h4>Result ${i + 1}</h4>
-                    <p>${escapeHtml(result.text)}</p>
-                    <p class="score">Score: ${(result.score * 100).toFixed(1)}%</p>
-                </div>
-            `;
-        });
-    } else {
-        html += '<p class="placeholder">No results found.</p>';
-    }
-    html += '</div>';
-    resultsDiv.innerHTML = html;
-}
-
-function displayAnswer(data) {
-    const answerDiv = document.getElementById('answerResult');
-    if (!answerDiv) return;
-    
-    answerDiv.innerHTML = `
-        <div class="result-section">
-            <p>${escapeHtml(data.answer)}</p>
-            <p class="metadata">Style: ${data.style} | Documents: ${data.num_documents}</p>
-        </div>
-    `;
-}
+const API_BASE_URL = "http://localhost:8000";
+const API_TIMEOUT = 10000;
 
 // ============================================================================
 // UTILITY FUNCTIONS
 // ============================================================================
 
-function showError(message) {
-    console.error('❌', message);
-    const alertEl = document.getElementById('alert');
-    if (alertEl) {
-        alertEl.innerHTML = `<div class="alert alert-error">${message}</div>`;
-        setTimeout(() => {
-            alertEl.innerHTML = '';
-        }, 5000);
-    }
+function showAlert(message, type = "info") {
+  const alertEl = document.getElementById("alert");
+  alertEl.textContent = message;
+  alertEl.className = `alert show ${type}`;
+  setTimeout(() => alertEl.classList.remove("show"), 5000);
 }
 
-function showSuccess(message) {
-    console.log('✅', message);
-    const alertEl = document.getElementById('alert');
-    if (alertEl) {
-        alertEl.innerHTML = `<div class="alert alert-success">${message}</div>`;
-        setTimeout(() => {
-            alertEl.innerHTML = '';
-        }, 3000);
-    }
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  localStorage.setItem(
+    "darkMode",
+    document.body.classList.contains("dark-mode")
+  );
 }
 
-function escapeHtml(text) {
-    const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
+function switchTab(tabName, event) {
+  // Hide all tabs
+  document.querySelectorAll(".mode-content").forEach((el) => {
+    el.classList.remove("active");
+  });
+
+  // Remove active from all buttons
+  document.querySelectorAll(".tab-button").forEach((el) => {
+    el.classList.remove("active");
+  });
+
+  // Show selected tab
+  document.getElementById(tabName).classList.add("active");
+
+  // Mark button as active
+  event.target.closest(".tab-button").classList.add("active");
+}
+
+function updateStatus(online = false) {
+  const dot = document.getElementById("statusDot");
+  const text = document.getElementById("statusText");
+
+  if (online) {
+    dot.classList.remove("offline");
+    dot.classList.add("online");
+    text.textContent = "✅ API Online";
+  } else {
+    dot.classList.remove("online");
+    dot.classList.add("offline");
+    text.textContent = "❌ API Offline";
+  }
+}
+
+function displayTriad(triad, containerId) {
+  const container = document.getElementById(containerId);
+  if (!triad) return;
+
+  const delta = triad.delta || 0;
+  const infinity = triad.infinity || 0;
+  const theta = triad.theta || 0;
+
+  const html = `
+        <div class="triad-item">
+            <div class="triad-label">∆ Delta</div>
+            <div class="triad-value">${delta.toFixed(3)}</div>
+            <div class="triad-bar">
+                <div class="triad-bar-fill" style="width: ${
+                  delta * 100
+                }%"></div>
+            </div>
+        </div>
+        <div class="triad-item">
+            <div class="triad-label">∞ Infinity</div>
+            <div class="triad-value">${infinity.toFixed(3)}</div>
+            <div class="triad-bar">
+                <div class="triad-bar-fill" style="width: ${
+                  infinity * 100
+                }%"></div>
+            </div>
+        </div>
+        <div class="triad-item">
+            <div class="triad-label">Θ Theta</div>
+            <div class="triad-value">${theta.toFixed(3)}</div>
+            <div class="triad-bar">
+                <div class="triad-bar-fill" style="width: ${
+                  theta * 100
+                }%"></div>
+            </div>
+        </div>
+    `;
+  container.innerHTML = html;
+}
+
+async function fetchAPI(endpoint, method = "GET", data = null) {
+  try {
+    const options = {
+      method,
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
-    return text.replace(/[&<>"']/g, m => map[m]);
+
+    if (data) {
+      options.body = JSON.stringify(data);
+    }
+
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
+
+    if (!response.ok) {
+      throw new Error(`API Error: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("API Error:", error);
+    throw error;
+  }
 }
+
+// ============================================================================
+// ENCODE FUNCTION
+// ============================================================================
+
+async function encodeContent() {
+  const content = document.getElementById("encodeInput").value;
+  const domain = document.getElementById("encodeDomain").value;
+
+  if (!content.trim()) {
+    showAlert("❌ Please enter content to encode", "error");
+    return;
+  }
+
+  try {
+    showAlert("⏳ Encoding...", "info");
+    const result = await fetchAPI("/transform", "POST", {
+      content: content,
+      domain: domain,
+    });
+
+    const resultBox = document.getElementById("encodeResult");
+    const embeddingSize = result.embedding ? result.embedding.length : "N/A";
+
+    document.getElementById("encodeResultText").innerHTML = `
+            <strong>✅ Encoding Successful</strong><br>
+            <strong>Embedding Size:</strong> ${embeddingSize}<br>
+            <strong>Content Type:</strong> ${
+              result.content_type || "unknown"
+            }<br>
+            <strong>Domain:</strong> ${result.domain || "auto"}
+        `;
+
+    if (result.triad) {
+      displayTriad(result.triad, "encodeTriad");
+    }
+
+    resultBox.style.display = "block";
+    resultBox.classList.add("success");
+    showAlert("✅ Encoding successful!", "success");
+  } catch (error) {
+    showAlert("❌ Encoding failed: " + error.message, "error");
+  }
+}
+
+// ============================================================================
+// SEARCH FUNCTION
+// ============================================================================
+
+async function performSearch() {
+  const query = document.getElementById("searchQuery").value;
+  const mode = document.getElementById("searchMode").value;
+  const k = parseInt(document.getElementById("searchK").value);
+
+  if (!query.trim()) {
+    showAlert("❌ Please enter a search query", "error");
+    return;
+  }
+
+  try {
+    showAlert("⏳ Searching...", "info");
+    const result = await fetchAPI("/unified/search", "POST", {
+      query: query,
+      triad_target: mode,
+      k: k,
+    });
+
+    const resultsDiv = document.getElementById("searchResults");
+    const resultsList = document.getElementById("searchResultsList");
+
+    if (result.results && result.results.length > 0) {
+      resultsList.innerHTML = result.results
+        .map(
+          (r, idx) => `
+                <div class="result-item">
+                    <h4>${idx + 1}. ${r.doc_id}</h4>
+                    <p>${r.content || "No content available"}</p>
+                    <span class="score-badge">
+                        <i class="fas fa-star"></i> Score: ${(
+                          r.score || 0
+                        ).toFixed(3)}
+                    </span>
+                </div>
+            `
+        )
+        .join("");
+    } else {
+      resultsList.innerHTML = "<p>No results found</p>";
+    }
+
+    resultsDiv.style.display = "block";
+    showAlert(
+      `✅ Found ${result.results ? result.results.length : 0} results!`,
+      "success"
+    );
+  } catch (error) {
+    showAlert("❌ Search failed: " + error.message, "error");
+  }
+}
+
+// ============================================================================
+// Q&A FUNCTION
+// ============================================================================
+
+async function generateAnswer() {
+  const query = document.getElementById("qaQuery").value;
+  const k = parseInt(document.getElementById("qaContext").value);
+
+  if (!query.trim()) {
+    showAlert("❌ Please enter a question", "error");
+    return;
+  }
+
+  try {
+    showAlert("⏳ Generating answer...", "info");
+    const result = await fetchAPI("/unified/answer", "POST", {
+      query: query,
+      k: k,
+    });
+
+    const resultBox = document.getElementById("qaResult");
+    document.getElementById("qaResultText").textContent =
+      result.answer || "No answer generated";
+    resultBox.style.display = "block";
+    resultBox.classList.add("success");
+    showAlert("✅ Answer generated!", "success");
+  } catch (error) {
+    showAlert("❌ Answer generation failed: " + error.message, "error");
+  }
+}
+
+// ============================================================================
+// TRANSFORM FUNCTION
+// ============================================================================
+
+async function transformContent() {
+  const content = document.getElementById("transformInput").value;
+  const fromDomain = document.getElementById("transformFrom").value;
+  const toDomain = document.getElementById("transformTo").value;
+
+  if (!content.trim()) {
+    showAlert("❌ Please enter content to transform", "error");
+    return;
+  }
+
+  try {
+    showAlert("⏳ Transforming...", "info");
+    const result = await fetchAPI("/transform", "POST", {
+      content: content,
+      from_domain: fromDomain,
+      to_domain: toDomain,
+    });
+
+    const resultBox = document.getElementById("transformResult");
+    document.getElementById("transformResultText").textContent =
+      result.transformed || "Transformation failed";
+    resultBox.style.display = "block";
+    resultBox.classList.add("success");
+    showAlert("✅ Transformation successful!", "success");
+  } catch (error) {
+    showAlert("❌ Transformation failed: " + error.message, "error");
+  }
+}
+
+// ============================================================================
+// SIMILARITY FUNCTION
+// ============================================================================
+
+async function computeSimilarity() {
+  const content1 = document.getElementById("sim1").value;
+  const content2 = document.getElementById("sim2").value;
+
+  if (!content1.trim() || !content2.trim()) {
+    showAlert("❌ Please enter both contents", "error");
+    return;
+  }
+
+  try {
+    showAlert("⏳ Computing similarity...", "info");
+    const result = await fetchAPI("/similarity", "POST", {
+      content1: content1,
+      content2: content2,
+    });
+
+    const score = result.similarity || 0;
+    const resultBox = document.getElementById("similarityResult");
+    document.getElementById("similarityScore").textContent = score.toFixed(3);
+
+    const percentage = Math.round(score * 100);
+    const barFill = document.getElementById("similarityBar");
+    barFill.style.width = score * 100 + "%";
+    document.getElementById("similarityPercent").textContent = percentage + "%";
+
+    resultBox.style.display = "block";
+    resultBox.classList.add("success");
+    showAlert("✅ Similarity calculated!", "success");
+  } catch (error) {
+    showAlert("❌ Similarity calculation failed: " + error.message, "error");
+  }
+}
+
+// ============================================================================
+// INITIALIZATION
+// ============================================================================
+
+async function checkAPIStatus() {
+  try {
+    const response = await fetch(`${API_BASE_URL}/health`);
+    if (response.ok) {
+      updateStatus(true);
+    } else {
+      updateStatus(false);
+    }
+  } catch (error) {
+    updateStatus(false);
+  }
+}
+
+// Initialize on page load
+document.addEventListener("DOMContentLoaded", () => {
+  // Check dark mode preference
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+  }
+
+  // Check API status
+  checkAPIStatus();
+
+  // Check API status every 5 seconds
+  setInterval(checkAPIStatus, 5000);
+
+  // Add keyboard shortcuts
+  document.addEventListener("keydown", (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+      const activeTab = document.querySelector(".mode-content.active");
+      if (activeTab.id === "encode") encodeContent();
+      else if (activeTab.id === "search") performSearch();
+      else if (activeTab.id === "qa") generateAnswer();
+      else if (activeTab.id === "transform") transformContent();
+      else if (activeTab.id === "similarity") computeSimilarity();
+    }
+  });
+});
