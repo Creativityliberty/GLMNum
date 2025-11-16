@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLM v3.0 - Symbolic Transformation System ∆∞Θ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>🚀 GLM v3.0</h1>
+                <p>General Language Model - Transform concepts across domains using ∆∞Θ</p>
+                <div id="apiStatus" class="api-status offline">⏳ Checking API...</div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Mode Tabs -->
+            <section class="section">
+                <div class="mode-tabs">
+                    <button class="tab-button active" onclick="switchMode('transform')">
+                        🔄 Transform Mode
+                    </button>
+                    <button class="tab-button" onclick="switchMode('chat')">
+                        💬 Chat Mode
+                    </button>
+                    <button class="tab-button" onclick="switchMode('unified')">
+                        🔍 Unified Search
+                    </button>
+                </div>
+            </section>
+
+            <!-- Alert Messages -->
+            <div id="alert"></div>
+
+            <!-- Transform Mode Content -->
+            <div id="transformMode" class="mode-content active">
+                <!-- Domain Selector -->
+                <section class="section">
+                    <h2>📊 Select Domains</h2>
+                    <div class="domain-selectors">
+                        <div class="domain-selector">
+                            <label for="sourceDomain">Source Domain:</label>
+                            <select id="sourceDomain">
+                                <option value="text">📝 Text (Natural Language)</option>
+                                <option value="code">💻 Code (Python AST)</option>
+                                <option value="geometry">🔺 Geometry (Triangle, Circle, Polygon)</option>
+                                <option value="image">🖼️ Image (Visual Features)</option>
+                            </select>
+                        </div>
+                        <div class="domain-selector">
+                            <label for="targetDomain">Target Domain:</label>
+                            <select id="targetDomain">
+                                <option value="code">💻 Code (Python AST)</option>
+                                <option value="text">📝 Text (Natural Language)</option>
+                                <option value="geometry">🔺 Geometry (Triangle, Circle, Polygon)</option>
+                                <option value="image">🖼️ Image (Visual Features)</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Input Panel -->
+                <section class="section">
+                    <h2>✍️ Input Content</h2>
+                    <div class="input-panel">
+                        <div id="inputContainer" class="input-container">
+                            <textarea id="textInput" placeholder="Enter text..." class="input-field">Artificial intelligence is revolutionizing technology.</textarea>
+                        </div>
+                        <button id="transformBtn" class="btn btn-primary">🔄 Transform</button>
+                    </div>
+                </section>
+
+                <!-- Results Panel -->
+                <section class="section">
+                    <h2>📊 Results</h2>
+                    <div class="results-panel">
+                        <div class="result-item">
+                            <h3>Transformed Content</h3>
+                            <div id="resultContent" class="result-content">
+                                <p class="placeholder">Results will appear here...</p>
+                            </div>
+                        </div>
+
+                        <div class="result-item">
+                            <h3>Symbolic Representation ∆∞Θ</h3>
+                            <div id="symbolicInfo" class="symbolic-info">
+                                <p class="placeholder">Symbolic data will appear here...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Similarity Section -->
+                <section class="section">
+                    <h2>📊 Compute Similarity</h2>
+                    <div class="similarity-panel">
+                        <div class="similarity-inputs">
+                            <div class="input-group">
+                                <label for="similarityInput1">First Content</label>
+                                <textarea id="similarityInput1" placeholder="Enter first content..." class="input-field">Machine learning</textarea>
+                            </div>
+                            <div class="input-group">
+                                <label for="similarityInput2">Second Content</label>
+                                <textarea id="similarityInput2" placeholder="Enter second content..." class="input-field">Artificial intelligence</textarea>
+                            </div>
+                        </div>
+                        <button id="similarityBtn" class="btn btn-primary">📊 Calculate Similarity</button>
+                        <div id="similarityResult" class="result-content">
+                            <p class="placeholder">Similarity results will appear here...</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Chat Mode Content -->
+            <div id="chatMode" class="mode-content">
+                <section class="section">
+                    <h2>💬 Chat with GLM</h2>
+                    <div class="chat-panel">
+                        <div id="chatMessages" class="chat-messages">
+                            <div class="message system">
+                                <p>Welcome to GLM Chat! Ask me anything about transformations, domains, or symbolic representations.</p>
+                            </div>
+                        </div>
+                        <div class="chat-input-area">
+                            <textarea id="chatInput" placeholder="Type your message..." class="chat-input"></textarea>
+                            <button id="chatBtn" class="btn btn-primary">Send 💬</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Unified Search Mode -->
+            <div id="unifiedMode" class="mode-content">
+                <section class="section">
+                    <h2>🔍 Unified Search & Answer</h2>
+                    <div class="unified-panel">
+                        <div class="search-area">
+                            <div class="input-group">
+                                <label for="searchQuery">Search Query</label>
+                                <input type="text" id="searchQuery" placeholder="Enter your search query..." class="input-field">
+                            </div>
+                            <div class="input-group">
+                                <label for="triadTarget">Triad Target Mode</label>
+                                <select id="triadTarget">
+                                    <option value="auto">Auto</option>
+                                    <option value="abstract">Abstract (∆)</option>
+                                    <option value="concrete">Concrete (Θ)</option>
+                                    <option value="balanced">Balanced (∞)</option>
+                                </select>
+                            </div>
+                            <button id="searchBtn" class="btn btn-primary">🔍 Search</button>
+                        </div>
+
+                        <div id="searchResults" class="search-results">
+                            <p class="placeholder">Search results will appear here...</p>
+                        </div>
+
+                        <div class="answer-area">
+                            <h3>Generate Answer</h3>
+                            <button id="answerBtn" class="btn btn-primary">📝 Generate Answer</button>
+                            <div id="answerResult" class="result-content">
+                                <p class="placeholder">Answer will appear here...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- API Information -->
+            <section class="section">
+                <h2>📖 API Information</h2>
+                <div class="api-info">
+                    <p><strong>Backend URL:</strong> http://localhost:8081</p>
+                    <p><strong>API Docs:</strong> <a href="http://localhost:8081/docs" target="_blank" rel="noopener noreferrer">http://localhost:8081/docs</a></p>
+                    <p><strong>ReDoc:</strong> <a href="http://localhost:8081/redoc" target="_blank" rel="noopener noreferrer">http://localhost:8081/redoc</a></p>
+                    <p><strong>Health Check:</strong> <a href="http://localhost:8081/health" target="_blank" rel="noopener noreferrer">http://localhost:8081/health</a></p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>GLM v3.0 - General Language Model | Backend: Python FastAPI | Frontend: HTML5 + JavaScript</p>
+            <p class="footer-note">Make sure the backend is running: <code>python backend.py</code></p>
+        </footer>
+    </div>
+
+    <script src="app_complete.js"></script>
+</body>
+</html>

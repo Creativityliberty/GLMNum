@@ -1,0 +1,203 @@
+================================================================================
+                    GLM v3.0 - STARTUP INSTRUCTIONS
+                         Quick Start Guide
+================================================================================
+
+✅ SYSTEM STATUS: READY TO RUN
+
+Backend API: http://localhost:8081
+Web UI: http://localhost:8000
+
+================================================================================
+STEP 1: VERIFY BACKEND IS RUNNING
+================================================================================
+
+Check if backend is still running:
+  lsof -i :8081
+
+If NOT running, start it:
+  cd "/Volumes/Numtema/Ava agent/GLM/glm_prototype"
+  source .venv/bin/activate
+  python backend.py
+
+Expected output:
+  INFO:     Started server process [XXXX]
+  INFO:     Uvicorn running on http://0.0.0.0:8081
+
+================================================================================
+STEP 2: VERIFY WEB UI SERVER IS RUNNING
+================================================================================
+
+Check if web UI server is running:
+  lsof -i :8000
+
+If NOT running, start it (in a NEW terminal):
+  cd "/Volumes/Numtema/Ava agent/GLM/glm_prototype/web_ui"
+  python -m http.server 8000
+
+Expected output:
+  Serving HTTP on 0.0.0.0 port 8000
+
+================================================================================
+STEP 3: OPEN WEB UI IN BROWSER
+================================================================================
+
+Open your browser and go to:
+  http://localhost:8000
+
+You should see:
+  ✅ API Status: "✅ API Online" (green)
+  
+If you see "❌ API Offline":
+  - Make sure backend is running on port 8081
+  - Check: http://localhost:8081/health
+
+================================================================================
+STEP 4: TEST THE SYSTEM
+================================================================================
+
+1. Transform Content:
+   - Select "Source Domain": Text
+   - Select "Target Domain": Code
+   - Enter content: "Hello world"
+   - Click "🔄 Transform"
+
+2. Compute Similarity:
+   - Enter first content: "Machine learning"
+   - Enter second content: "Artificial intelligence"
+   - Click "📊 Calculate Similarity"
+
+3. View API Documentation:
+   - Click link: http://localhost:8081/docs
+   - Try endpoints in Swagger UI
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+❌ "API is not online"
+   → Make sure backend is running: python backend.py
+   → Check port 8081: lsof -i :8081
+   → Verify: curl http://localhost:8081/health
+
+❌ "Cannot connect to localhost:8000"
+   → Make sure web UI server is running: python -m http.server 8000
+   → Check port 8000: lsof -i :8000
+
+❌ "Port already in use"
+   → Kill all processes: python cleanup.py
+   → Then restart services
+
+❌ "API returns 500 error"
+   → Check backend console for error messages
+   → Verify all dependencies are installed
+
+================================================================================
+CLEANUP & RESTART
+================================================================================
+
+To stop all services and reset:
+  python cleanup.py
+
+This will:
+  ✅ Kill all Python processes
+  ✅ Free all ports (8000-8090)
+  ✅ Reset the system
+
+Then restart:
+  1. Start backend: python backend.py
+  2. Start web UI: python -m http.server 8000
+  3. Open browser: http://localhost:8000
+
+================================================================================
+QUICK COMMANDS
+================================================================================
+
+# Check backend status
+curl http://localhost:8081/health
+
+# Get system stats
+curl http://localhost:8081/stats
+
+# View API docs
+http://localhost:8081/docs
+
+# View ReDoc
+http://localhost:8081/redoc
+
+# Test transform endpoint
+curl -X POST http://localhost:8081/transform \
+  -H "Content-Type: application/json" \
+  -d '{"content":"hello","source_domain":"text","target_domain":"code"}'
+
+# Test similarity endpoint
+curl -X POST http://localhost:8081/similarity \
+  -H "Content-Type: application/json" \
+  -d '{"content1":"hello","content2":"hi","domain":"text"}'
+
+# Test search endpoint
+curl -X POST http://localhost:8081/unified/search \
+  -H "Content-Type: application/json" \
+  -d '{"query":"test","k":5,"triad_target":"auto"}'
+
+================================================================================
+SYSTEM ARCHITECTURE
+================================================================================
+
+BACKEND (Port 8081):
+  ✅ 17 API Endpoints
+  ✅ FastAPI + Uvicorn
+  ✅ Type-safe models
+  ✅ Full documentation
+
+WEB UI (Port 8000):
+  ✅ Modern HTML5 interface
+  ✅ Real-time API status
+  ✅ Transform & Similarity
+  ✅ Error handling
+
+FEATURES:
+  ✅ Symbolic transformation
+  ✅ DeepTriad analysis
+  ✅ Unified system
+  ✅ Vision transformation
+  ✅ Complete documentation
+
+================================================================================
+FILES
+================================================================================
+
+Backend:
+  - backend.py (Main API server)
+  - cleanup.py (Cleanup script)
+
+Web UI:
+  - index.html (Main page)
+  - app.js (Application logic)
+  - style.css (Styling)
+
+Documentation:
+  - SYSTEM_RUNNING_FINAL.txt (System status)
+  - STARTUP_INSTRUCTIONS.txt (This file)
+
+================================================================================
+SUPPORT
+================================================================================
+
+API Documentation:
+  http://localhost:8081/docs
+
+Backend Health:
+  http://localhost:8081/health
+
+System Stats:
+  http://localhost:8081/stats
+
+All 17 Endpoints:
+  http://localhost:8081/docs (Swagger UI)
+
+================================================================================
+VERSION: 3.0.0
+STATUS: ✅ PRODUCTION READY
+LAST UPDATED: 2024-11-16 18:06 UTC+01:00
+================================================================================

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Connection Test</title>
+    <style>
+        body { font-family: Arial; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        h1 { color: #333; }
+        .test { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 4px; }
+        .test.pass { background: #d4edda; border-color: #28a745; }
+        .test.fail { background: #f8d7da; border-color: #dc3545; }
+        .test.pending { background: #fff3cd; border-color: #ffc107; }
+        code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; }
+        pre { background: #f0f0f0; padding: 10px; border-radius: 4px; overflow-x: auto; }
+        button { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 GLM API Connection Test</h1>
+        
+        <div id="tests"></div>
+        
+        <button onclick="runAllTests()">Run All Tests</button>
+        <button onclick="location.reload()">Refresh</button>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8081';
+        
+        async function test(name, fn) {
+            const testDiv = document.createElement('div');
+            testDiv.className = 'test pending';
+            testDiv.innerHTML = `<h3>${name}</h3><p>Testing...</p>`;
+            document.getElementById('tests').appendChild(testDiv);
+            
+            try {
+                const result = await fn();
+                testDiv.className = 'test pass';
+                testDiv.innerHTML = `<h3>✅ ${name}</h3><pre>${JSON.stringify(result, null, 2)}</pre>`;
+            } catch (error) {
+                testDiv.className = 'test fail';
+                testDiv.innerHTML = `<h3>❌ ${name}</h3><p>${error.message}</p>`;
+            }
+        }
+        
+        async function runAllTests() {
+            document.getElementById('tests').innerHTML = '';
+            
+            // Test 1: Health Check
+            await test('Health Check', async () => {
+                const response = await fetch(`${API_URL}/health`);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+            
+            // Test 2: Domains
+            await test('List Domains', async () => {
+                const response = await fetch(`${API_URL}/domains`);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+            
+            // Test 3: Stats
+            await test('Get Stats', async () => {
+                const response = await fetch(`${API_URL}/stats`);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+            
+            // Test 4: Transform
+            await test('Transform Endpoint', async () => {
+                const response = await fetch(`${API_URL}/transform`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        content: 'hello world',
+                        source_domain: 'text',
+                        target_domain: 'code'
+                    })
+                });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+            
+            // Test 5: Similarity
+            await test('Similarity Endpoint', async () => {
+                const response = await fetch(`${API_URL}/similarity`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        content1: 'hello',
+                        content2: 'hi',
+                        domain: 'text'
+                    })
+                });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+            
+            // Test 6: Analyze
+            await test('Analyze Endpoint', async () => {
+                const response = await fetch(`${API_URL}/analyze`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        content: 'test content',
+                        domain: 'text'
+                    })
+                });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+            
+            // Test 7: DeepTriad
+            await test('DeepTriad Analyze', async () => {
+                const response = await fetch(`${API_URL}/deeptriad/analyze`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chunks: ['chunk1', 'chunk2']
+                    })
+                });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+            
+            // Test 8: Unified Search
+            await test('Unified Search', async () => {
+                const response = await fetch(`${API_URL}/unified/search`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        query: 'test',
+                        k: 5,
+                        triad_target: 'auto'
+                    })
+                });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+            
+            // Test 9: Unified Answer
+            await test('Unified Answer', async () => {
+                const response = await fetch(`${API_URL}/unified/answer`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        query: 'test',
+                        k: 5,
+                        triad_target_mode: 'auto'
+                    })
+                });
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return await response.json();
+            });
+        }
+        
+        // Auto-run tests on load
+        window.addEventListener('load', runAllTests);
+    </script>
+</body>
+</html>
