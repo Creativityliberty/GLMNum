@@ -141,7 +141,8 @@ async function encodeContent() {
     showAlert("⏳ Encoding...", "info");
     const result = await fetchAPI("/transform", "POST", {
       content: content,
-      domain: domain,
+      source_domain: domain,
+      target_domain: domain,
     });
 
     const resultBox = document.getElementById("encodeResult");
@@ -272,8 +273,8 @@ async function transformContent() {
     showAlert("⏳ Transforming...", "info");
     const result = await fetchAPI("/transform", "POST", {
       content: content,
-      from_domain: fromDomain,
-      to_domain: toDomain,
+      source_domain: fromDomain,
+      target_domain: toDomain,
     });
 
     const resultBox = document.getElementById("transformResult");
