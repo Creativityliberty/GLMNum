@@ -62,13 +62,24 @@ function displayTriad(triad, containerId) {
   const container = document.getElementById(containerId);
   if (!triad) return;
 
-  const delta = triad.delta || 0;
-  const infinity = triad.infinity || 0;
-  const theta = triad.theta || 0;
+  // Handle both direct values and nested structure
+  let delta, infinity, theta;
+
+  if (triad.delta_hat !== undefined) {
+    // From NumTriad (∆̂, ∞̂, Θ̂)
+    delta = triad.delta_hat || 0;
+    infinity = triad.infty_hat || 0;
+    theta = triad.theta_hat || 0;
+  } else {
+    // Direct values
+    delta = triad.delta || 0;
+    infinity = triad.infinity || 0;
+    theta = triad.theta || 0;
+  }
 
   const html = `
         <div class="triad-item">
-            <div class="triad-label">∆ Delta</div>
+            <div class="triad-label">∆ Delta (Specificity)</div>
             <div class="triad-value">${delta.toFixed(3)}</div>
             <div class="triad-bar">
                 <div class="triad-bar-fill" style="width: ${
@@ -77,7 +88,7 @@ function displayTriad(triad, containerId) {
             </div>
         </div>
         <div class="triad-item">
-            <div class="triad-label">∞ Infinity</div>
+            <div class="triad-label">∞ Infinity (Generality)</div>
             <div class="triad-value">${infinity.toFixed(3)}</div>
             <div class="triad-bar">
                 <div class="triad-bar-fill" style="width: ${
@@ -86,7 +97,7 @@ function displayTriad(triad, containerId) {
             </div>
         </div>
         <div class="triad-item">
-            <div class="triad-label">Θ Theta</div>
+            <div class="triad-label">Θ Theta (Context)</div>
             <div class="triad-value">${theta.toFixed(3)}</div>
             <div class="triad-bar">
                 <div class="triad-bar-fill" style="width: ${
@@ -148,13 +159,23 @@ async function encodeContent() {
     const resultBox = document.getElementById("encodeResult");
     const embeddingSize = result.embedding ? result.embedding.length : "N/A";
 
+    // Check if auto-learning was used
+    const autoLearningInfo = result.metadata && result.metadata.learned
+      ? "🤖 <strong>Auto-Learned Domain</strong>"
+      : "✅ Standard Domain";
+
+    // Check if NumTriad was used
+    const numtriadInfo = result.metadata && result.metadata.numtriad_used
+      ? "🧠 <strong>NumTriad Embeddings</strong>"
+      : "📊 Standard Embeddings";
+
     document.getElementById("encodeResultText").innerHTML = `
             <strong>✅ Encoding Successful</strong><br>
             <strong>Embedding Size:</strong> ${embeddingSize}<br>
-            <strong>Content Type:</strong> ${
-              result.content_type || "unknown"
-            }<br>
-            <strong>Domain:</strong> ${result.domain || "auto"}
+            <strong>Content Type:</strong> ${result.content_type || "unknown"}<br>
+            <strong>Domain:</strong> ${result.domain || "auto"}<br>
+            <strong>Method:</strong> ${autoLearningInfo}<br>
+            <strong>Encoder:</strong> ${numtriadInfo}
         `;
 
     if (result.triad) {
