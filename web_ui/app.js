@@ -188,7 +188,7 @@ async function performSearch() {
     const result = await fetchAPI("/unified/search", "POST", {
       query: query,
       triad_target: mode,
-      k: k,
+      k: parseInt(k),
     });
 
     const resultsDiv = document.getElementById("searchResults");
@@ -241,7 +241,8 @@ async function generateAnswer() {
     showAlert("⏳ Generating answer...", "info");
     const result = await fetchAPI("/unified/answer", "POST", {
       query: query,
-      k: k,
+      k: parseInt(k),
+      triad_target_mode: "auto",
     });
 
     const resultBox = document.getElementById("qaResult");
@@ -306,6 +307,7 @@ async function computeSimilarity() {
     const result = await fetchAPI("/similarity", "POST", {
       content1: content1,
       content2: content2,
+      domain: "text",
     });
 
     const score = result.similarity || 0;
