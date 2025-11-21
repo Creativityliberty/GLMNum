@@ -20,11 +20,20 @@ try:
     HAS_GEMINI = True
 except ImportError:
     HAS_GEMINI = False
+
+# Import specialized modules
+from core.quantum_engine import DeltaInfinityOmicronCore
+from core.consciousness import InnerWorldModel, MetaCognitiveAgent, ReasoningPhase
+from core.memory_enhanced import EnhancedMemorySystem
+from agents.rrla_agents import (
+    FocusAgent, Mapper, ExplorerAgent, Planner, 
     FlowMaintainer, VerifierAgent, IntegratorAgent,
     QuantumExplorerAgent, TransformationCoordinatorAgent
 )
 # Import NumTriad Core
 from numtriad.system_integration import UnifiedGLMSystem
+# Import Legacy Neural Encoders (Nomic)
+from encoders.neural import NomicTextEncoder
 
 logger = logging.getLogger(__name__)
 
