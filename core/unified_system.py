@@ -298,7 +298,17 @@ class UnifiedGLM:
         """
         if not self.auto_learner:
             logger.warning("AutoLearningEngine not available, using standard encoding")
-            return self.encode_anything(content, domain)
+            result = self.encode_anything(content, domain)
+            return {
+                "status": "success",
+                "method": "standard",
+                "embedding": result.embedding if hasattr(result, 'embedding') else None,
+                "metadata": {
+                    "learned": False,
+                    "numtriad_used": False,
+                    "domain": domain,
+                }
+            }
         
         content_str = str(content)
         
@@ -308,7 +318,12 @@ class UnifiedGLM:
             return {
                 "status": "success",
                 "method": "standard",
-                "result": result,
+                "embedding": result.embedding if hasattr(result, 'embedding') else None,
+                "metadata": {
+                    "learned": False,
+                    "numtriad_used": False,
+                    "domain": domain,
+                }
             }
         except Exception as e:
             logger.info(f"Standard encoding failed: {e}")
@@ -341,9 +356,13 @@ class UnifiedGLM:
             return {
                 "status": "success",
                 "method": "auto_learning",
-                "domain": new_domain.name,
-                "concept": unknown_concept,
-                "result": result,
+                "embedding": result.embedding if hasattr(result, 'embedding') else None,
+                "metadata": {
+                    "learned": True,
+                    "numtriad_used": getattr(new_domain, 'numtriad_encoder', None) is not None,
+                    "domain": new_domain.name,
+                    "concept": unknown_concept,
+                }
             }
     
     def encode_anything(

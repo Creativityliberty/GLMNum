@@ -130,6 +130,88 @@ class Domain(ABC):
 
 
 # ============================================================================
+# IMPLÉMENTATIONS DE DOMAINES DE BASE
+# ============================================================================
+
+class TextDomain(Domain):
+    """Domaine textuel standard"""
+    
+    @property
+    def name(self) -> str:
+        return "text"
+        
+    def has_notion_of(self, concept: str) -> bool:
+        return True
+        
+    def encode(self, obj: Any) -> SymbolicRepresentation:
+        # Encodage factice pour l'instant
+        dim = 128
+        delta = np.random.randn(dim)
+        omega = np.random.randn(dim)
+        return SymbolicRepresentation(delta, nx.Graph(), omega, {"type": "text"})
+        
+    def decode(self, symbolic: SymbolicRepresentation) -> Any:
+        return "[Decoded Text]"
+
+class CodeDomain(Domain):
+    """Domaine de code"""
+    
+    @property
+    def name(self) -> str:
+        return "code"
+        
+    def has_notion_of(self, concept: str) -> bool:
+        return True
+        
+    def encode(self, obj: Any) -> SymbolicRepresentation:
+        dim = 128
+        delta = np.random.randn(dim)
+        omega = np.random.randn(dim)
+        return SymbolicRepresentation(delta, nx.Graph(), omega, {"type": "code"})
+        
+    def decode(self, symbolic: SymbolicRepresentation) -> Any:
+        return "def decoded_function(): pass"
+
+class GeometryDomain(Domain):
+    """Domaine géométrique"""
+    
+    @property
+    def name(self) -> str:
+        return "geometry"
+        
+    def has_notion_of(self, concept: str) -> bool:
+        return True
+        
+    def encode(self, obj: Any) -> SymbolicRepresentation:
+        dim = 128
+        delta = np.random.randn(dim)
+        omega = np.random.randn(dim)
+        return SymbolicRepresentation(delta, nx.Graph(), omega, {"type": "geometry"})
+        
+    def decode(self, symbolic: SymbolicRepresentation) -> Any:
+        return "Shape(...)"
+
+class ImageDomain(Domain):
+    """Domaine image"""
+    
+    @property
+    def name(self) -> str:
+        return "image"
+        
+    def has_notion_of(self, concept: str) -> bool:
+        return True
+        
+    def encode(self, obj: Any) -> SymbolicRepresentation:
+        dim = 128
+        delta = np.random.randn(dim)
+        omega = np.random.randn(dim)
+        return SymbolicRepresentation(delta, nx.Graph(), omega, {"type": "image"})
+        
+    def decode(self, symbolic: SymbolicRepresentation) -> Any:
+        return "Image(...)"
+
+
+# ============================================================================
 # MOTEUR SYMBOLIQUE
 # ============================================================================
 
@@ -146,6 +228,8 @@ class SymbolicEngine:
     
     def __init__(self, embedding_dim: int = 128):
         """
+        Initialiser le moteur symbolique
+        
         Args:
             embedding_dim: Dimensionalité des vecteurs ∆ et Ο
         """
@@ -157,6 +241,20 @@ class SymbolicEngine:
             'cache_hits': 0,
             'domain_count': 0
         }
+        
+        # Register base domains
+        self._register_base_domains()
+    
+    def _register_base_domains(self) -> None:
+        """Register base domains on initialization"""
+        base_domains = [
+            TextDomain(),
+            CodeDomain(),
+            GeometryDomain(),
+            ImageDomain(),
+        ]
+        for domain in base_domains:
+            self.register_domain(domain)
     
     def register_domain(self, domain: Domain) -> None:
         """
