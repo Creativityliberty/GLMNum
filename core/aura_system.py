@@ -18,6 +18,10 @@ from agents.rrla_agents import (
     FlowMaintainer, VerifierAgent, IntegratorAgent,
     QuantumExplorerAgent, TransformationCoordinatorAgent
 )
+# Import NumTriad Core
+from numtriad.system_integration import UnifiedGLMSystem
+
+logger = logging.getLogger(__name__)
 
 # ============================================================================
 # NEURAL VOICE (Natural Language Generation)

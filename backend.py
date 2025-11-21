@@ -282,6 +282,7 @@ async def vision_path(source: str, target: str):
 if __name__ == "__main__":
     print("\n" + "="*70)
     print("🚀 Aura GLM Backend API v4.0")
+    print("   Powered by NumTriad™ - Property of Lionel Numtema")
     print("="*70)
     print("📍 Starting on http://0.0.0.0:8081")
     print("🧠 Consciousness: ACTIVE")
