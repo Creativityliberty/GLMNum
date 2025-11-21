@@ -50,20 +50,31 @@ class NeuralVoice:
         self.model_name = os.getenv("LLM_MODEL", "gemini-1.5-flash")
         self.api_key = os.getenv("GEMINI_API_KEY")
         
+        logger.info(f"NeuralVoice Init: HAS_GEMINI={HAS_GEMINI}, API_KEY={'***' if self.api_key else 'None'}")
+        
         if HAS_GEMINI and self.api_key:
-            genai.configure(api_key=self.api_key)
-            self.model = genai.GenerativeModel(self.model_name)
-            self.active = True
-            logger.info(f"✅ Gemini Model Loaded: {self.model_name}")
+            try:
+                genai.configure(api_key=self.api_key)
+                self.model = genai.GenerativeModel(self.model_name)
+                self.active = True
+                logger.info(f"✅ Gemini Model Loaded: {self.model_name}")
+            except Exception as e:
+                logger.error(f"Failed to load Gemini: {e}")
+                self.active = False
         else:
             self.active = False
-            logger.warning("⚠️ Gemini not available. Using simulation mode.")
+            logger.warning(f"⚠️ Gemini not available. HAS_GEMINI={HAS_GEMINI}, API_KEY={bool(self.api_key)}")
         
     def articulate_thought(self, context: Dict) -> str:
         """
         Takes the raw mental state of Aura and turns it into fluid prose using Gemini.
         """
+        print(f"DEBUG: articulate_thought called. self.active={self.active}")
+        logger.info(f"articulate_thought called. self.active={self.active}")
+        
         if not self.active:
+            print("DEBUG: Gemini not active, using simulation")
+            logger.warning("Gemini not active, using simulation")
             return self._simulate_llm_generation(context['paradigm'], context['trace'])
 
         query = context['query']
@@ -84,10 +95,15 @@ User query: "{query}"
 Respond naturally and fluidly, as if you are thinking out loud. Explain your reasoning process organically. Be conversational, not robotic."""
         
         try:
+            print("DEBUG: Calling Gemini API...")
+            logger.info("Calling Gemini API...")
             response = self.model.generate_content(prompt)
+            print(f"DEBUG: Gemini response: {response.text[:50]}")
+            logger.info(f"✅ Gemini response received: {response.text[:50]}...")
             return response.text
         except Exception as e:
-            logger.error(f"Gemini API error: {e}")
+            print(f"DEBUG: Gemini API error: {e}")
+            logger.error(f"❌ Gemini API error: {e}")
             return self._simulate_llm_generation(paradigm, trace)
 
     def _simulate_llm_generation(self, paradigm: str, trace: List[Dict]) -> str:
