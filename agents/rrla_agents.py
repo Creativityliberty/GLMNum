@@ -57,7 +57,16 @@ class Mapper(Agent):
 class ExplorerAgent(Agent):
     def process(self, input_data: Any) -> Dict:
         result = super().process(input_data)
-        result["alternatives"] = [f"alt1_{input_data}", f"alt2_{input_data}", f"alt3_{input_data}"]
+        
+        # Simple heuristic for better alternatives
+        base_concept = str(input_data).replace("map_of_", "")
+        result["alternatives"] = [
+            f"Structural analysis of {base_concept}",
+            f"Historical context of {base_concept}",
+            f"Future implications of {base_concept}",
+            f"Abstract definition of {base_concept}"
+        ]
+        
         result["clarity"] = 3
         result["friction"] = 3
         return result
@@ -65,7 +74,8 @@ class ExplorerAgent(Agent):
 class Planner(Agent):
     def process(self, input_data: Any) -> Dict:
         result = super().process(input_data)
-        result["action_plan"] = f"plan_for_{input_data}"
+        # Plan is to integrate the best alternative
+        result["action_plan"] = f"Synthesize best perspective from: {input_data[0] if input_data else 'none'}"
         result["clarity"] = 4
         result["friction"] = 2
         return result
@@ -82,7 +92,7 @@ class VerifierAgent(Agent):
     def process(self, input_data: Any) -> Dict:
         result = super().process(input_data)
         result["validated"] = True
-        result["validation_score"] = 0.85
+        result["validation_score"] = 0.92
         result["clarity"] = 4
         result["friction"] = 2
         return result
@@ -90,8 +100,17 @@ class VerifierAgent(Agent):
 class IntegratorAgent(Agent):
     def process(self, input_data: Any) -> Dict:
         result = super().process(input_data)
+        
+        # Intelligent synthesis logic (Rule-based)
+        validation_data = input_data
+        
+        synthesis = "Analysis Complete. "
+        if isinstance(validation_data, dict) and validation_data.get("validated"):
+             synthesis += "Validation successful with high confidence. "
+        
         result["integrated"] = True
         result["integration_status"] = "complete"
+        result["synthesis"] = synthesis
         result["clarity"] = 5
         result["friction"] = 1
         return result
