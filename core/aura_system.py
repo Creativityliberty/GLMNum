@@ -102,6 +102,17 @@ class AuraGLM:
         # Core ∆∞Ο engine
         self.delta_infinity_omicron = DeltaInfinityOmicronCore()
         
+        # NumTriad System (The Body/Capabilities)
+        # Property of Lionel Numtema
+        self.numtriad = UnifiedGLMSystem()
+        
+        # Neural Toolbox (Nomic Embeddings)
+        try:
+            self.neural_toolbox = NomicTextEncoder()
+        except Exception as e:
+            logger.warning(f"Nomic Encoder not available: {e}")
+            self.neural_toolbox = None
+        
         # Neural Voice (New)
         self.voice = NeuralVoice()
         

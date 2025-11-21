@@ -16,7 +16,7 @@ Usage:
     uvicorn backend:app --host 0.0.0.0 --port 8081
 """
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Optional, Dict, Any, List
@@ -26,6 +26,9 @@ import logging
 
 # Import Aura Kernel
 from core.aura_system import AuraGLM
+
+# Import Trainer
+from numtriad.training.deeptriad_trainer import train_deeptriad_model
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -274,6 +277,42 @@ async def vision_connect(req: VisionRequest):
 async def vision_path(source: str, target: str):
     return {"status": "success", "path": [source, target]}
 
+
+# ============================================================================
+# TRAINING ENDPOINTS
+# ============================================================================
+
+class TrainingRequest(BaseModel):
+    data_path: str = Field(..., description="Path to JSONL data")
+    output_path: str = Field("checkpoints/model.pt", description="Where to save model")
+    epochs: int = Field(3, description="Number of epochs")
+    device: str = Field("cpu", description="Device (cpu/cuda)")
+
+@app.post("/training/start", tags=["Training"])
+async def start_training(req: TrainingRequest, background_tasks: BackgroundTasks):
+    """Start DeepTriad Training in background"""
+    
+    def run_training():
+        logger.info(f"Starting background training: {req.data_path}")
+        result = train_deeptriad_model(
+            data_path=req.data_path,
+            output_path=req.output_path,
+            num_epochs=req.epochs,
+            device=req.device
+        )
+        logger.info(f"Training finished: {result}")
+
+    background_tasks.add_task(run_training)
+    
+    return {
+        "status": "accepted",
+        "message": "Training started in background",
+        "config": {
+            "data": req.data_path,
+            "epochs": req.epochs,
+            "device": req.device
+        }
+    }
 
 # ============================================================================
 # MAIN
