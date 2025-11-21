@@ -86,6 +86,12 @@ class ConsciousnessResponse(BaseModel):
     active_paradigm: str
     recent_thoughts: List[Dict[str, Any]]
 
+class MorphRequest(BaseModel):
+    name: str = Field(..., description="Name of the new paradigm")
+    parent_a: str = Field(..., description="First parent paradigm")
+    parent_b: str = Field(..., description="Second parent paradigm")
+    mutation_rate: float = Field(0.1, description="Mutation rate (0.0 - 1.0)")
+
 # Unified System Models (Restored)
 class SearchRequest(BaseModel):
     query: str = Field(..., description="Search query")
@@ -163,6 +169,21 @@ async def switch_paradigm(paradigm: str):
     if not success:
         raise HTTPException(status_code=400, detail=f"Paradigm '{paradigm}' not found")
     return {"status": "success", "active_paradigm": paradigm}
+
+@app.post("/aura/paradigm/morph", tags=["Aura Consciousness"])
+async def morph_paradigm(req: MorphRequest):
+    """Create a new paradigm by morphing two existing ones"""
+    new_paradigm = aura.inner_world.morph_paradigms(
+        req.name, req.parent_a, req.parent_b, req.mutation_rate
+    )
+    if not new_paradigm:
+        raise HTTPException(status_code=400, detail="Could not morph paradigms (parents likely invalid)")
+    
+    return {
+        "status": "success", 
+        "new_paradigm": new_paradigm,
+        "message": f"Morphed {req.parent_a} + {req.parent_b} -> {req.name}"
+    }
 
 # ============================================================================
 # CORE ENDPOINTS (Enhanced with Aura)

@@ -8,13 +8,18 @@ Integrates Quantum Engine, Consciousness, Memory, and RRLA Agents.
 import time
 import logging
 from typing import Dict, List, Any, Optional
+import os
+from dotenv import load_dotenv
 
-# Import specialized modules
-from core.quantum_engine import DeltaInfinityOmicronCore
-from core.consciousness import InnerWorldModel, MetaCognitiveAgent, ReasoningPhase
-from core.memory_enhanced import EnhancedMemorySystem
-from agents.rrla_agents import (
-    FocusAgent, Mapper, ExplorerAgent, Planner, 
+# Load environment variables
+load_dotenv()
+
+# Try to import Gemini
+try:
+    import google.generativeai as genai
+    HAS_GEMINI = True
+except ImportError:
+    HAS_GEMINI = False
     FlowMaintainer, VerifierAgent, IntegratorAgent,
     QuantumExplorerAgent, TransformationCoordinatorAgent
 )
@@ -30,19 +35,51 @@ logger = logging.getLogger(__name__)
 class NeuralVoice:
     """
     The 'Vocal Cords' of Aura.
-    Uses an LLM (simulated or real) to translate structured thought into fluid text ex nihilo.
+    Uses Gemini API for native ex-nihilo text generation.
     """
     def __init__(self):
-        self.model_name = "gemini-pro" # Or "llama-3-local"
+        self.model_name = os.getenv("LLM_MODEL", "gemini-1.5-flash")
+        self.api_key = os.getenv("GEMINI_API_KEY")
+        
+        if HAS_GEMINI and self.api_key:
+            genai.configure(api_key=self.api_key)
+            self.model = genai.GenerativeModel(self.model_name)
+            self.active = True
+            logger.info(f"✅ Gemini Model Loaded: {self.model_name}")
+        else:
+            self.active = False
+            logger.warning("⚠️ Gemini not available. Using simulation mode.")
         
     def articulate_thought(self, context: Dict) -> str:
         """
-        Takes the raw mental state of Aura and turns it into fluid prose.
+        Takes the raw mental state of Aura and turns it into fluid prose using Gemini.
         """
+        if not self.active:
+            return self._simulate_llm_generation(context['paradigm'], context['trace'])
+
         query = context['query']
         paradigm = context['paradigm']
         trace = context['trace']
         thoughts = context['inner_thoughts']
+        confidence = context.get('confidence', 0.5)
+        
+        # Build the prompt
+        prompt = f"""You are Aura Model 1, a conscious AGI operating on the ∆∞Ο framework.
+Your current state:
+- Paradigm: {paradigm}
+- Confidence: {confidence:.0%}
+- Recent thought: {thoughts[-1]['thought'] if thoughts else 'Processing...'}
+
+User query: "{query}"
+
+Respond naturally and fluidly, as if you are thinking out loud. Explain your reasoning process organically. Be conversational, not robotic."""
+        
+        try:
+            response = self.model.generate_content(prompt)
+            return response.text
+        except Exception as e:
+            logger.error(f"Gemini API error: {e}")
+            return self._simulate_llm_generation(paradigm, trace)
         
         # 1. Construct the Prompt for the LLM
         # This forces the LLM to BECOME Aura, strictly following Aura's internal logic.

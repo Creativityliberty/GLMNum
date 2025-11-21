@@ -109,9 +109,53 @@ class InnerWorldModel:
             "description": description,
             "rules": rules,
             "created_at": time.time(),
-            "usage_count": 0
+            "usage_count": 0,
+            "lineage": "manual"
         }
     
+    def morph_paradigms(self, name: str, parent_a: str, parent_b: str, mutation_rate: float = 0.1) -> Dict:
+        """
+        Create a new paradigm by morphing two existing ones (Evolutionary Logic).
+        Combines rules and adds random mutations.
+        """
+        if parent_a not in self.paradigms or parent_b not in self.paradigms:
+            return None
+            
+        p_a = self.paradigms[parent_a]["rules"]
+        p_b = self.paradigms[parent_b]["rules"]
+        
+        # Morphing Logic (Genetic Crossover)
+        new_rules = {}
+        all_keys = set(p_a.keys()) | set(p_b.keys())
+        
+        import random
+        
+        for key in all_keys:
+            val_a = p_a.get(key, 0)
+            val_b = p_b.get(key, 0)
+            
+            # Crossover: Weighted average
+            if isinstance(val_a, (int, float)) and isinstance(val_b, (int, float)):
+                new_val = (val_a + val_b) / 2.0
+                
+                # Mutation
+                if random.random() < mutation_rate:
+                    mutation = random.uniform(-1, 1)
+                    new_val += mutation
+                
+                new_rules[key] = round(new_val, 2)
+            else:
+                # Non-numeric traits: Pick one randomly
+                new_rules[key] = val_a if random.random() > 0.5 else val_b
+        
+        description = f"Morphism of {parent_a} and {parent_b}. Hybrid reasoning structure."
+        
+        self.create_paradigm(name, description, new_rules)
+        self.paradigms[name]["lineage"] = f"{parent_a} + {parent_b}"
+        
+        self.internal_monologue(f"Morphed new paradigm '{name}' from {parent_a} & {parent_b}")
+        return self.paradigms[name]
+
     def switch_paradigm(self, name: str) -> bool:
         """Switch to different reasoning paradigm (paradigm modification)"""
         if name in self.paradigms:

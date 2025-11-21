@@ -1,0 +1,2024 @@
+﻿“ Imagine que ton paradigme est comme une application GPS interne.
+Si elle est mal paramétrée, elle peut t’envoyer dans des impasses.
+Mais si tu mets à jour la carte, tout ton chemin change.”
+
+
+1. Qu’est-ce qu’un paradigme ?
+* Définition générale : Un paradigme est un modèle de pensée ou un cadre de référence qui structure la manière dont on interprète la réalité.
+
+* C’est la “paire de lunettes” invisible que chacun porte pour voir le monde.
+
+* Il détermine ce que l’on considère comme vrai, possible ou normal.
+
+En sciences humaines, un paradigme influence :
+   * Nos perceptions (ce que l’on remarque ou ignore).
+
+   * Nos interprétations (comment on donne du sens aux choses).
+
+   * Nos actions (ce qu’on décide de faire ou non).
+
+
+On va construire pas à pas le schéma de l’univers de la définition du paradigme.
+
+
+1. Noyau central
+Au centre, il y a le concept de Paradigme.
+       ┌──────────────────────────────────┐
+        │        PARADIGME                  │
+        │ (Modèle de pensée / Cadre mental) │
+        └──────────────────────────────────┘
+
+
+________________
+
+
+2. Métaphore clé
+Une paire de lunettes invisible = filtre mental.
+       ┌─────────────────────────────────────┐
+        │ MÉTAPHORE : Lunettes invisibles      │
+        │ → Filtre par lequel on voit le monde │
+        └─────────────────────────────────────┘
+
+
+________________
+
+
+3. Ce que ça détermine
+Le paradigme influence directement :
+
+
+       ┌───────────┐   ┌────────────┐   ┌───────────────┐
+        │ Perceptions│   │Interprét. │   │Actions        │
+        │ (voir /    │   │ (donner   │   │ (agir ou non) │
+        │ ignorer)   │   │ du sens)  │   │               │
+        └───────────┘   └────────────┘   └───────────────┘
+
+
+________________
+
+
+4. Schéma combiné (première version ASCII)
+Voici déjà la structure visuelle :
+
+
+                        ┌──────────────────────────────────┐
+                          │        PARADIGME                  │
+                          │ (Modèle de pensée / Cadre mental) │
+                          └──────────────────────────────────┘
+                                       │
+                                       ▼
+                     ┌─────────────────────────────────────┐
+                     │ MÉTAPHORE : Lunettes invisibles      │
+                     │ → Filtre par lequel on voit le monde │
+                     └─────────────────────────────────────┘
+                                       │
+                ┌──────────────────────┼──────────────────────┐
+                ▼                      ▼                      ▼
+        ┌─────────────┐       ┌─────────────┐         ┌───────────────┐
+        │ Perceptions │       │ Interpré-  │         │ Actions       │
+        │ (voir /     │       │ tations    │         │ (agir ou non) │
+        │ ignorer)    │       │ (sens)     │         │               │
+        └─────────────┘       └─────────────┘         └───────────────┘
+
+
+on va disséquer le noyau.
+
+
+Noyau central : PARADIGME
+      * Nom : Paradigme
+
+      * Définition : Modèle de pensée / Cadre mental
+
+      * Rôle : Organise la façon dont un être humain interprète la réalité.
+
+________________
+
+
+2. Noyau du noyau : Composants internes
+Si on ouvre le paradigme, à l’intérieur on trouve 3 couches internes :
+
+
+┌───────────────────────────────────────────────┐
+│ **Structure cognitive**                       │ → Organisation mentale (schémas, croyances)
+│ **Filtre perceptif**                          │ → Ce qui est remarqué ou ignoré
+│ **Cadre interprétatif**                       │ → Grille qui donne du sens aux infos
+└───────────────────────────────────────────────┘
+
+
+
+
+________________
+
+
+3. Noyau du noyau du noyau : Éléments constitutifs fondamentaux
+Si on creuse encore, chaque composant repose sur des micro-briques :
+🔹 Structure cognitive
+         * Croyances de base : convictions profondes sur le monde, soi, les autres.
+
+         * Modèles mentaux : représentations simplifiées de la réalité.
+
+         * Schémas acquis : habitudes de pensée récurrentes.
+
+🔹 Filtre perceptif
+            * Sélection attentionnelle : ce qu’on décide consciemment/inconsciemment de voir.
+
+            * Priorisation : hiérarchisation automatique de l’info.
+
+            * Exclusion : tout ce qui est ignoré.
+
+🔹 Cadre interprétatif
+               * Système de valeurs : ce qui est jugé important ou non.
+
+               * Logique interne : comment les événements sont reliés dans notre esprit.
+
+               * Langage interne : mots et concepts utilisés pour expliquer la réalité.
+
+________________
+
+
+4. Schéma du “noyau fractal” en ASCII
+                         ┌──────────────────────────────────┐
+                          │        PARADIGME                  │
+                          │ (Modèle de pensée / Cadre mental) │
+                          └──────────────────────────────────┘
+                                       │
+                                       ▼
+                 ┌───────────────────────────────┬───────────────────────────────┬───────────────────────────────┐
+                 │ Structure cognitive           │ Filtre perceptif              │ Cadre interprétatif           │
+                 │ (schémas, croyances)          │ (ce qu'on voit/ignore)        │ (sens donné aux choses)       │
+                 └──────────────┬────────────────┴────────────────┬─────────────┴─────────────┬───────────────────┘
+                                ▼                                 ▼                             ▼
+                    ┌────────────────────┐           ┌────────────────────┐        ┌────────────────────┐
+                    │ Croyances de base  │           │ Sélection attention │        │ Système de valeurs │
+                    │ Modèles mentaux    │           │ Priorisation        │        │ Logique interne    │
+                    │ Schémas acquis     │           │ Exclusion           │        │ Langage interne    │
+                    └────────────────────┘           └────────────────────┘        └────────────────────┘
+
+
+________________
+
+
+💡 En résumé :
+                  * Noyau = Paradigme (l’idée globale).
+
+                  * Noyau du noyau = ses 3 piliers (structure cognitive, filtre perceptif, cadre interprétatif).
+
+                  * Noyau du noyau du noyau = micro-briques qui forment ces piliers.
+
+
+1. Décomposition en profondeur de la Structure cognitive
+🔹 Niveau 1 : Structure cognitive
+→ L’architecture mentale qui sert de support à tout le paradigme.
+"L’architecture mentale qui sert de support à tout le paradigme"
+
+
+Schéma ASCII – Le paradigme comme un bâtiment
+bash
+CopierModifier
+              ┌────────────────────────────────────────────┐
+               │                  PARADIGME                  │
+               │  (Vision globale du monde et de soi)         │
+               └────────────────────────────────────────────┘
+                              ▲
+                              │
+               ┌────────────────────────────────────────────┐
+               │         Cadres et filtres mentaux           │
+               │ - Perceptions (ce que je remarque/ignore)   │
+               │ - Interprétations (sens donné aux infos)    │
+               │ - Actions (réponses choisies)               │
+               └────────────────────────────────────────────┘
+                              ▲
+                              │
+               ┌────────────────────────────────────────────┐
+               │          ARCHITECTURE MENTALE               │
+               │ (Support invisible qui structure le tout)   │
+               │                                              │
+               │  ┌──────────────────────────────────────┐   │
+               │  │ Croyances de base                     │   │
+               │  │ - Vision du monde                      │  │
+               │  │ - Jugement sur soi et autrui           │  │
+               │  └──────────────────────────────────────┘   │
+               │                                              │
+               │  ┌──────────────────────────────────────┐   │
+               │  │ Modèles mentaux                       │   │
+               │  │ - Représentations simplifiées         │  │
+               │  │ - Analogies structurant la pensée     │  │
+               │  └──────────────────────────────────────┘   │
+               │                                              │
+               │  ┌──────────────────────────────────────┐   │
+               │  │ Schémas acquis                        │   │
+               │  │ - Automatisme émotionnel              │  │
+               │  │ - Habitudes cognitives et comportement│  │
+               │  └──────────────────────────────────────┘   │
+               └────────────────────────────────────────────┘
+                              ▲
+                              │
+               ┌────────────────────────────────────────────┐
+               │              FONDATIONS ORIGINELLES         │
+               │ - Culture                                   │
+               │ - Éducation                                 │
+               │ - Expériences vécues                        │
+               │ - Spiritualité / Valeurs                    │
+               └────────────────────────────────────────────┘
+
+
+________________
+
+
+Lecture du schéma
+                     1. Fondations originelles
+→ Ce sont tes expériences, ta culture, ton éducation, tes valeurs spirituelles.
+Elles influencent directement la construction de ton architecture mentale.
+
+                     2. Architecture mentale
+→ C’est la charpente invisible : croyances de base, modèles mentaux, schémas acquis.
+C’est ce qui tient et organise tout ton système de pensée.
+
+                     3. Cadres et filtres mentaux
+→ Ils se forment à partir de l’architecture et déterminent ce que tu perçois, comment tu l’interprètes et comment tu agis.
+
+                     4. Paradigme global
+→ C’est la maison finie : la vision complète que tu as du monde, de toi-même, et de ta place dans ce monde.
+
+
+________________
+
+
+1. Définition simple
+L’architecture mentale c’est la structure invisible qui organise :
+                        * Comment tu ranges les informations dans ta tête
+
+                        * Comment tu les relis entre elles
+
+                        * Comment tu construis du sens à partir de ce que tu perçois
+
+Elle ne contient pas seulement des idées isolées, mais un système entier qui tient debout comme un bâtiment.
+Sans cette structure, tes pensées seraient comme des briques posées au sol sans mur ni plan.
+________________
+
+
+2. Exemple concret : "La vie est un combat"
+Imaginons une personne dont le paradigme central est :
+"La vie est un combat"
+Architecture mentale :
+                           * Croyance de base : Le monde est hostile, rien n’est donné gratuitement.
+
+                           * Modèle mental : Tout est une lutte où il faut gagner ou perdre.
+
+                           * Schémas acquis : Réagir rapidement aux attaques, ne pas faire confiance facilement, être toujours prêt à défendre sa position.
+
+Conséquences :
+                              * Elle interprète une remarque comme une attaque.
+
+                              * Elle perçoit la réussite des autres comme une concurrence directe.
+
+                              * Elle agit de façon défensive ou agressive même quand ce n’est pas nécessaire.
+
+________________
+
+
+3. Autre exemple : "Le monde est une école"
+Imaginons une autre personne dont le paradigme est :
+"Le monde est une école"
+Architecture mentale :
+                                 * Croyance de base : Chaque expérience est une leçon utile.
+
+                                 * Modèle mental : La vie est un parcours d’apprentissage permanent.
+
+                                 * Schémas acquis : Observer, analyser ses erreurs, chercher à s’améliorer.
+
+Conséquences :
+                                    * Elle interprète un échec comme une opportunité d’apprentissage.
+
+                                    * Elle perçoit les autres comme des co-apprenants et non des ennemis.
+
+                                    * Elle agit de façon curieuse et ouverte plutôt que défensive.
+
+________________
+
+
+💡 Image mentale :
+ L’architecture mentale est le plan de ton cerveau pour organiser le sens.
+Deux personnes peuvent vivre la même situation mais réagir complètement différemment car elles ont des architectures mentales différentes.
+
+
+🔹 Niveau 2 : Ses trois grands sous-piliers
+                                       1. Croyances de base → Ce que je tiens pour vrai à propos du monde, des autres et de moi-même.
+
+                                       2. Modèles mentaux → Les cartes mentales que j’utilise pour interpréter la réalité.
+
+                                       3. Schémas acquis → Les automatismes et habitudes de pensée.
+Croyances de base
+Définition : Ce que je tiens pour vrai à propos du monde, des autres et de moi-même.
+Ces croyances sont souvent inconscientes et influencent tout ce que je pense et fais.
+Exemples :
+                                          * Sur le monde : "Le monde est dangereux." → tendance à la méfiance.
+
+                                          * Sur les autres : "On ne peut pas faire confiance aux gens." → relations prudentes ou fermées.
+
+                                          * Sur soi-même : "Je ne suis pas capable de réussir." → auto-sabotage, peur d’essayer.
+
+________________
+
+
+2. Modèles mentaux
+Définition : Les cartes mentales que j’utilise pour interpréter la réalité.
+Ils sont comme des raccourcis intellectuels qui me disent "voilà comment ça marche".
+Exemples :
+                                             * Vie = compétition → je vois chaque situation comme un jeu de gagnant-perdant.
+
+                                             * Relations = échanges commerciaux → je calcule toujours ce que je donne et ce que je reçois.
+
+                                             * Apprentissage = escalier → je crois que la progression est toujours linéaire, marche après marche.
+
+________________
+
+
+3. Schémas acquis
+Définition : Les automatismes et habitudes de pensée.
+Ils se construisent avec le temps, à force de répétition.
+Exemples :
+                                                * Schéma émotionnel : face à une critique → réaction automatique de défense ou de colère.
+
+                                                * Schéma cognitif : toujours chercher la faute chez soi en cas de problème.
+
+                                                * Schéma comportemental : éviter systématiquement les conflits, même si c’est nécessaire.
+
+________________
+
+
+Résumé visuel simple
+
+
+┌────────────────────────────────────────────┐
+│         SOUS-PILIERS DE L’ARCHITECTURE      │
+└────────────────────────────────────────────┘
+     │
+     ├── CROYANCES DE BASE
+     │      • Monde = dangereux → méfiance
+     │      • Autres = pas fiables → isolement
+     │      • Moi = incapable → peur d’essayer
+     │
+     ├── MODÈLES MENTAUX
+     │      • Vie = compétition
+     │      • Relations = transactions
+     │      • Apprentissage = escalier
+     │
+     └── SCHÉMAS ACQUIS
+            • Critique → colère
+            • Problème → culpabilité
+            • Conflit → évitement
+Cas pratique : L’entrepreneur qui échoue
+Contexte
+                                                   * Jean veut lancer une start-up de services digitaux.
+
+                                                   * Il a les compétences techniques mais peu d’expérience en business.
+
+                                                   * Il a déjà connu un échec dans un ancien projet.
+
+________________
+
+
+1. Croyances de base
+Ce que Jean tient pour vrai, souvent inconsciemment.
+                                                      * Sur le monde :
+"Le marché est saturé, il n’y a plus de place pour moi."
+ → Résultat : Jean voit chaque concurrent comme une menace et se sent en retard.
+
+                                                      * Sur les autres :
+"Les gens ne sont pas prêts à payer pour ce que je fais."
+ → Résultat : il baisse ses prix au point de fragiliser son business.
+
+                                                      * Sur lui-même :
+"Je ne suis pas un vrai entrepreneur."
+ → Résultat : il doute de ses décisions et se dévalorise.
+
+________________
+
+
+2. Modèles mentaux
+Les cartes mentales que Jean utilise pour interpréter la réalité.
+                                                         * Vie professionnelle = compétition :
+→ Il croit qu’il faut écraser les autres pour réussir, ce qui le pousse à la comparaison permanente.
+
+                                                         * Lancer un business = tout ou rien :
+→ Il pense qu’un échec signifie qu’il n’est pas fait pour ça, au lieu d’apprendre et réessayer.
+
+                                                         * Marketing = manipulation :
+→ Il croit que vendre, c’est tromper, donc il hésite à promouvoir son produit.
+
+________________
+
+
+3. Schémas acquis
+Les automatismes qui dictent ses réactions.
+                                                            * Schéma émotionnel :
+Face à une critique → se braque et se justifie au lieu d’écouter et ajuster.
+
+                                                            * Schéma cognitif :
+Face à un obstacle → pense immédiatement "je suis nul".
+
+                                                            * Schéma comportemental :
+Évite les salons ou rencontres professionnelles par peur d’être jugé.
+
+________________
+
+
+4. Interaction des sous-piliers
+Ces trois niveaux se nourrissent entre eux :
+
+
+[ Croyances de base ] → orientent → [ Modèles mentaux ]
+[ Modèles mentaux ] → renforcent → [ Schémas acquis ]
+[ Schémas acquis ] → confirment → [ Croyances de base ]
+
+
+💡 Exemple concret :
+                                                               * Croyance : "Le marché est saturé"
+
+                                                               * Modèle mental : "Seuls les plus agressifs survivent"
+
+                                                               * Schéma acquis : Il évite d’entrer en concurrence → résultat = pas de clients → renforce la croyance de départ.
+
+________________
+
+
+5. Conséquences sur le paradigme global
+Paradigme de Jean :
+"L’entrepreneuriat est une jungle impitoyable, je ne suis pas taillé pour ça."
+Ce paradigme :
+                                                                  * Filtre ce qu’il voit (il repère surtout les échecs des autres).
+
+                                                                  * Oriente ses décisions (il prend moins de risques).
+
+                                                                  * Influence son comportement (il se retire des opportunités).
+
+________________
+
+
+6. Schéma ASCII illustrant le cycle
+
+
+┌───────────────────────┐
+ │  CROYANCES DE BASE    │
+ │ "Le marché est saturé"│
+ └───────────┬───────────┘
+             ▼
+ ┌───────────────────────┐
+ │   MODÈLES MENTAUX     │
+ │ "Seuls les plus       │
+ │ agressifs survivent"  │
+ └───────────┬───────────┘
+             ▼
+ ┌───────────────────────┐
+ │   SCHÉMAS ACQUIS      │
+ │ Évite la concurrence  │
+ │ → Moins de clients    │
+ └───────────┬───────────┘
+             ▼
+ ┌───────────────────────┐
+ │ CONFIRMATION DE LA    │
+ │ CROYANCE DE DÉPART    │
+ └───────────────────────┘
+
+
+________________
+
+
+💡 Moralité :
+Pour que Jean change son paradigme, il doit agir en profondeur sur :
+                                                                     1. Ses croyances de base (reprogrammer sa vision du monde).
+
+                                                                     2. Ses modèles mentaux (adopter des cartes mentales plus constructives).
+
+                                                                     3. Ses schémas acquis (remplacer les habitudes limitantes par des habitudes efficaces).
+
+
+🔹 Niveau 3 : Profondeur de chaque sous-pilier
+                                                                        * Croyances de base
+
+                                                                           * Ontologie personnelle (qui suis-je ?)
+
+                                                                           * Vision du monde (comment fonctionne le monde ?)
+
+                                                                           * Jugement sur les autres (que valent les autres ?)
+
+                                                                              * Modèles mentaux
+
+                                                                                 * Représentations simplifiées (ex : “le monde est un marché” → tout est transaction)
+
+                                                                                 * Analogies structurantes (ex : “la vie est un combat” → approche conflictuelle)
+
+                                                                                 * Raccourcis conceptuels (ex : “si ça marche pour un, ça marche pour tous”)
+
+                                                                                    * Schémas acquis
+
+                                                                                       * Schémas émotionnels (réactions affectives automatiques)
+
+                                                                                       * Schémas cognitifs (façons récurrentes d’analyser une situation)
+
+                                                                                       * Schémas comportementaux (réponses habituelles face à un contexte)
+
+________________
+
+
+1. Croyances de base
+Les convictions profondes sur soi, le monde et les autres.
+a) Ontologie personnelle (Qui suis-je ?)
+                                                                                          * Exemple positif : "Je suis une personne capable d’apprendre et de m’adapter." → Ouverture aux nouvelles expériences.
+
+                                                                                          * Exemple négatif : "Je suis nul en affaires." → Évite les opportunités entrepreneuriales.
+
+b) Vision du monde (Comment fonctionne le monde ?)
+                                                                                             * Exemple positif : "Le monde est plein d’opportunités si on sait les voir." → Cherche activement des solutions.
+
+                                                                                             * Exemple négatif : "Le monde est injuste et corrompu." → Cynisme, découragement.
+
+c) Jugement sur les autres (Que valent les autres ?)
+                                                                                                * Exemple positif : "Les gens sont fondamentalement bienveillants." → Crée facilement des partenariats.
+
+                                                                                                * Exemple négatif : "Les gens ne pensent qu’à eux." → Isolement, méfiance.
+
+________________
+
+
+2. Modèles mentaux
+Les "cartes mentales" qui organisent et simplifient la réalité.
+a) Représentations simplifiées
+                                                                                                   * "Le monde est un marché" → Tout devient transaction : évalue les relations en termes de coûts et bénéfices.
+
+                                                                                                   * "La vie est un jeu" → Aborde les défis comme des épreuves ludiques.
+
+b) Analogies structurantes
+                                                                                                      * "La vie est un combat" → Prêt à se défendre et à se battre pour chaque objectif.
+
+                                                                                                      * "L’entreprise est une famille" → Traite ses employés comme des proches, ce qui influence ses décisions RH.
+
+c) Raccourcis conceptuels
+                                                                                                         * "Si ça marche pour un, ça marche pour tous" → Généralisation rapide (parfois fausse).
+
+                                                                                                         * "Si ça n’a pas marché la première fois, ça ne marchera jamais" → Blocage à cause d’un échec unique.
+
+________________
+
+
+3. Schémas acquis
+Les habitudes mentales et comportementales formées par répétition.
+a) Schémas émotionnels (Réactions affectives automatiques)
+                                                                                                            * Exemple : Critique reçue → colère immédiate ou découragement.
+
+                                                                                                            * Exemple : Compliment reçu → gêne ou modestie excessive.
+
+b) Schémas cognitifs (Façons récurrentes d’analyser une situation)
+                                                                                                               * Exemple : Chercher d’abord qui est fautif au lieu de comprendre le problème.
+
+                                                                                                               * Exemple : Penser systématiquement au pire scénario.
+
+c) Schémas comportementaux (Réponses habituelles face à un contexte)
+                                                                                                                  * Exemple : En cas de conflit → fuir la discussion.
+
+                                                                                                                  * Exemple : En situation de stress → travailler plus fort sans pause.
+
+________________
+
+
+Résumé visuel en ASCII
+
+
+┌───────────────────────────────┐
+│   NIVEAU 3 : PROFONDEUR        │
+└───────────────────────────────┘
+   │
+   ├── CROYANCES DE BASE
+   │     • Ontologie perso : "Je suis capable" / "Je suis nul"
+   │     • Vision du monde : "Plein d’opportunités" / "Injuste"
+   │     • Jugement autres : "Bienveillants" / "Égoïstes"
+   │
+   ├── MODÈLES MENTAUX
+   │     • Représentations : "Monde = marché" / "Vie = jeu"
+   │     • Analogies : "Vie = combat" / "Entreprise = famille"
+   │     • Raccourcis : "Si ça marche une fois, marche toujours"
+   │
+   └── SCHÉMAS ACQUIS
+         • Émotionnels : Critique → colère
+         • Cognitifs : Cherche un coupable
+         • Comportementaux : Conflit → évitement
+
+
+2. Schéma ASCII détaillé
+
+
+┌─────────────────────────────────────────────┐
+│           STRUCTURE COGNITIVE               │
+│ (Architecture mentale d’un paradigme)       │
+└─────────────────────────────────────────────┘
+                     │
+ ┌───────────────────┼────────────────────┬────────────────────┐
+ ▼                   ▼                    ▼
+┌────────────────┐  ┌────────────────┐   ┌────────────────┐
+│ Croyances de   │  │ Modèles mentaux│   │ Schémas acquis │
+│ base           │  │                │   │                │
+└─────┬──────────┘  └─────┬──────────┘   └─────┬──────────┘
+      ▼                   ▼                   ▼
+┌─────────────┐   ┌────────────────┐   ┌───────────────────┐
+│ Ontologie   │   │ Représentations│   │ Schémas émotionnels│
+│ personnelle │   │ simplifiées    │   └───────────────────┘
+└─────────────┘   └────────────────┘   ┌───────────────────┐
+┌─────────────┐   ┌────────────────┐   │ Schémas cognitifs │
+│ Vision du   │   │ Analogies      │   └───────────────────┘
+│ monde       │   │ structurantes  │   ┌───────────────────┐
+└─────────────┘   └────────────────┘   │ Schémas           │
+┌─────────────┐   ┌────────────────┐   │ comportementaux   │
+│ Jugement    │   │ Raccourcis     │   └───────────────────┘
+│ sur autrui  │   │ conceptuels    │
+└─────────────┘   └────────────────┘
+
+
+________________
+
+
+💡 Ici, on voit :
+                                                                                                                     * Structure cognitive = le piliers-mère.
+
+                                                                                                                     * Elle se divise en 3 branches principales.
+
+                                                                                                                     * Chaque branche se divise encore en sous-niveaux qui forment le noyau profond.
+
+
+
+
+
+
+CAS CONCRET
+Personnage : Claire
+                                                                                                                        * Âge : 34 ans
+
+                                                                                                                        * Situation : Salariée dans une PME depuis 8 ans
+
+                                                                                                                        * Envie : Créer son activité indépendante (conseil en communication)
+
+                                                                                                                        * Blocage : Elle n’ose pas franchir le pas par peur d’échouer
+
+________________
+
+
+Niveau 1 – Croyances de base
+Les convictions profondes, souvent inconscientes
+                                                                                                                           1. Ontologie personnelle (Qui suis-je ?)
+
+                                                                                                                              * "Je suis quelqu’un de travailleur, mais pas vraiment un leader."
+
+                                                                                                                              * Elle se perçoit comme "bonne exécutante" mais pas comme "chef".
+
+                                                                                                                                 2. Vision du monde (Comment fonctionne le monde ?)
+
+                                                                                                                                    * "Dans la vie, il faut être prudent et rester dans un travail sûr."
+
+                                                                                                                                    * Elle croit que l’entrepreneuriat est réservé aux audacieux ou aux chanceux.
+
+                                                                                                                                       3. Jugement sur les autres (Que valent les autres ?)
+
+                                                                                                                                          * "Les gens exagèrent toujours leurs réussites."
+
+                                                                                                                                          * Elle doute des témoignages d’entrepreneurs qui parlent de succès rapides.
+
+________________
+
+
+Niveau 2 – Modèles mentaux
+Les cartes mentales avec lesquelles elle lit la réalité
+                                                                                                                                             1. Représentation simplifiée
+
+                                                                                                                                                * "Le marché du travail est une loterie" → la réussite serait surtout une question de chance.
+
+                                                                                                                                                   2. Analogie structurante
+
+                                                                                                                                                      * "La vie professionnelle est un champ de bataille" → il faut toujours se protéger des coups bas.
+
+                                                                                                                                                         3. Raccourci conceptuel
+
+                                                                                                                                                            * "Si je n’ai jamais dirigé, je ne pourrai jamais le faire" → auto-limitation immédiate.
+
+________________
+
+
+Niveau 3 – Schémas acquis
+Les habitudes automatiques qui découlent des croyances et modèles mentaux
+                                                                                                                                                               1. Schéma émotionnel
+
+                                                                                                                                                                  * Lorsqu’on lui propose un projet ambitieux → montée d’anxiété et tendance à dire "non" rapidement.
+
+                                                                                                                                                                     2. Schéma cognitif
+
+                                                                                                                                                                        * Lorsqu’elle voit quelqu’un réussir → elle pense "Oui, mais il a sûrement des relations ou de la chance".
+
+                                                                                                                                                                           3. Schéma comportemental
+
+                                                                                                                                                                              * Elle reste dans un environnement connu (son emploi actuel) et ne prend pas de risques, même quand elle s’ennuie.
+
+________________
+
+
+Comment tout ça se tient
+                                                                                                                                                                                 * Sa croyance ("Je ne suis pas faite pour diriger") nourrit son modèle mental ("Le succès dépend surtout de la chance").
+
+                                                                                                                                                                                 * Ce modèle mental justifie ses schémas acquis (refus des projets ambitieux).
+
+                                                                                                                                                                                 * Son comportement (refuser les opportunités) confirme sa croyance initiale ("Je ne peux pas diriger") → boucle fermée.
+
+________________
+
+
+Schéma ASCII de Claire
+java
+CopierModifier
+┌─────────────────────────────┐
+│       CROYANCES DE BASE     │
+│ "Je ne suis pas leader"     │
+│ "Il faut un travail sûr"    │
+│ "Les réussites sont gonflées"│
+└──────────────┬──────────────┘
+               ▼
+┌─────────────────────────────┐
+│       MODÈLES MENTAUX       │
+│ "Travail = loterie"         │
+│ "Vie pro = champ de bataille"│
+│ "Pas dirigé → pas capable"  │
+└──────────────┬──────────────┘
+               ▼
+┌─────────────────────────────┐
+│        SCHÉMAS ACQUIS       │
+│ Projets ambitieux → anxiété │
+│ Succès des autres = chance  │
+│ Évite risques → reste stable│
+└──────────────┬──────────────┘
+               ▼
+┌─────────────────────────────┐
+│  CONFIRMATION DE LA CROYANCE│
+│   "Je ne peux pas diriger"  │
+└─────────────────────────────┘
+
+
+________________
+
+
+💡 Pourquoi on se reconnaît facilement en Claire :
+                                                                                                                                                                                    * Beaucoup de personnes ressentent cette envie de changement mais restent bloquées par leur propre paradigme.
+
+                                                                                                                                                                                    * C’est un exemple réaliste d’auto-renforcement : plus on reste prudent, plus on se convainc qu’on a raison de l’être.
+
+                                                                                                                                                                                    * Changer ce type de paradigme nécessite d’attaquer les trois niveaux à la fois.
+
+
+Qu’est-ce que le Filtre perceptif ?
+C’est le mécanisme mental qui décide ce que tu perçois du monde et ce que tu ignores, consciemment ou inconsciemment.
+                                                                                                                                                                                       * Il module la réalité : tu ne vois pas tout ce qui existe, seulement ce que ton filtre laisse passer.
+
+                                                                                                                                                                                       * Il agit comme un portier qui choisit quelles informations peuvent entrer dans ta conscience.
+
+💡 Exemple simple :
+Si tu es dans un café bruyant mais qu’on prononce ton prénom à une table voisine, tu vas l’entendre immédiatement → ton filtre perceptif a laissé passer cette info car elle est pertinente pour toi.
+________________
+
+
+Les trois sous-branches
+1. Sélection attentionnelle
+Ce qu’on décide consciemment ou inconsciemment de voir ou d’entendre.
+                                                                                                                                                                                          * Version consciente : Choisir volontairement un détail à observer (ex : chercher quelqu’un dans la foule).
+
+                                                                                                                                                                                          * Version inconsciente : Remarquer automatiquement certaines choses selon nos habitudes ou instincts (ex : reconnaître le son de son téléphone parmi d’autres).
+
+________________
+
+
+2. Priorisation
+La hiérarchisation automatique des informations que l’on traite en premier.
+                                                                                                                                                                                             * Importance perçue : Ce qui semble urgent ou crucial pour toi (ex : un message d’un proche malade passe avant un mail publicitaire).
+
+                                                                                                                                                                                             * Énergie disponible : Ce que tu traites selon ta fatigue ou ta motivation (ex : remettre un dossier à plus tard car tu es épuisé).
+
+________________
+
+
+3. Exclusion
+Ce que l’on ignore totalement ou que l’on rejette.
+                                                                                                                                                                                                * Filtrage inconscient : Informations qui passent inaperçues (ex : ne pas remarquer le bruit de la climatisation).
+
+                                                                                                                                                                                                * Rejet mental : Informations volontairement ignorées car elles dérangent (ex : éviter une vérité qui contredit une croyance personnelle).
+
+________________
+
+
+Schéma ASCII – Filtre perceptif éclaté et expliqué
+vbnet
+CopierModifier
+┌──────────────────────────────────────────────┐
+│                FILTRE PERCEPTIF              │
+│ Filtre mental qui module ce que l'on perçoit │
+└──────────────────────────────────────────────┘
+                     │
+ ┌───────────────────┼──────────────────────────┬─────────────────────────┐
+ ▼                   ▼                          ▼
+┌────────────────┐  ┌─────────────────────┐    ┌─────────────────────┐
+│ Sélection      │  │ Priorisation        │    │ Exclusion           │
+│ attentionnelle │  │ (Hiérarchisation)   │    │ (Ignorer / Rejeter) │
+└─────┬──────────┘  └─────┬───────────────┘    └─────┬───────────────┘
+      ▼                   ▼                        ▼
+┌──────────────┐   ┌──────────────────┐    ┌─────────────────────┐
+│ Consciente   │   │ Importance perçue│    │ Filtrage inconscient│
+│ (choix vol.) │   │ (urgent / utile) │    │ (jamais remarqué)   │
+└──────────────┘   └──────────────────┘    └─────────────────────┘
+┌──────────────┐   ┌──────────────────┐    ┌─────────────────────┐
+│ Inconsciente │   │ Énergie dispo.   │    │ Rejet mental        │
+│ (habitudes)  │   │ (effort dispo.)  │    │ (tabou, déni)       │
+└──────────────┘   └──────────────────┘    └─────────────────────┘
+
+
+________________
+
+
+💡 Résumé simple :
+Le filtre perceptif décide ce que tu laisses entrer dans ta conscience :
+                                                                                                                                                                                                   * Sélection : Qu’est-ce que je regarde ?
+
+                                                                                                                                                                                                   * Priorisation : Qu’est-ce que je traite en premier ?
+
+                                                                                                                                                                                                   * Exclusion : Qu’est-ce que j’ignore ou refuse de voir ?
+
+
+
+
+Schéma ASCII – Filtre perceptif éclaté
+scss
+CopierModifier
+┌───────────────────────────────────────────┐
+│              FILTRE PERCEPTIF              │
+│ (Filtre mental qui module la réalité)      │
+└───────────────────────────────────────────┘
+                     │
+ ┌───────────────────┼───────────────────────┬──────────────────────┐
+ ▼                   ▼                       ▼
+┌────────────────┐  ┌───────────────────┐   ┌───────────────────┐
+│ Sélection      │  │ Priorisation      │   │ Exclusion         │
+│ attentionnelle │  │                   │   │                   │
+└─────┬──────────┘  └─────┬─────────────┘   └─────┬─────────────┘
+      ▼                   ▼                       ▼
+┌──────────────┐   ┌──────────────────┐   ┌──────────────────┐
+│ Conscient    │   │ Importance perçue│   │ Filtrage inconsc.│
+│ (choix vol.) │   │ (urgent / utile) │   │ (jamais vu/entendu)│
+└──────────────┘   └──────────────────┘   └──────────────────┘
+┌──────────────┐   ┌──────────────────┐   ┌──────────────────┐
+│ Inconscient  │   │ Énergie dispo.   │   │ Rejet mental      │
+│ (habitudes)  │   │ (effort à fournir)│  │ (tabou, déni)     │
+└──────────────┘   └──────────────────┘   └──────────────────┘
+
+
+________________
+
+
+Explication rapide des profondeurs
+                                                                                                                                                                                                      1. Sélection attentionnelle
+
+                                                                                                                                                                                                         * Conscient : tu choisis délibérément de porter ton attention sur un détail (ex : chercher une personne dans la foule).
+
+                                                                                                                                                                                                         * Inconscient : ton attention est guidée par l’habitude ou l’instinct (ex : remarquer automatiquement ton prénom dans une conversation).
+
+                                                                                                                                                                                                            2. Priorisation
+
+                                                                                                                                                                                                               * Importance perçue : ce qui te semble le plus pertinent ou urgent (ex : répondre à ton téléphone avant de finir un mail).
+
+                                                                                                                                                                                                               * Énergie disponible : ce que tu traites en fonction de ton niveau de fatigue ou motivation.
+
+                                                                                                                                                                                                                  3. Exclusion
+
+                                                                                                                                                                                                                     * Filtrage inconscient : ce que ton cerveau ne capte même pas (ex : ne pas remarquer un bruit familier).
+
+                                                                                                                                                                                                                     * Rejet mental : ce que tu refuses de voir ou penser (ex : éviter une information qui contredit ta croyance).
+
+
+
+
+Structure cognitive filtrage :
+                                                                                                                                                                                                                        * Noyau
+
+                                                                                                                                                                                                                        * Noyau du noyau
+
+                                                                                                                                                                                                                        * Noyau du noyau du noyau
+
+________________
+
+
+1. NOYAU
+Sélection attentionnelle
+Capacité à orienter son attention sur certains stimuli de l’environnement, de façon consciente ou inconsciente.
+________________
+
+
+2. NOYAU DU NOYAU
+Deux modes principaux :
+                                                                                                                                                                                                                           1. Version consciente
+
+                                                                                                                                                                                                                              * Attention volontaire dirigée vers une cible précise.
+
+                                                                                                                                                                                                                              * Exemple : Chercher un ami dans la foule, lire un livre dans un café bruyant.
+
+                                                                                                                                                                                                                                 2. Version inconsciente
+
+                                                                                                                                                                                                                                    * Attention captée automatiquement par certains stimuli.
+
+                                                                                                                                                                                                                                    * Exemple : Sursauter à un bruit soudain, remarquer son prénom dans une conversation.
+
+________________
+
+
+3. NOYAU DU NOYAU DU NOYAU
+Chaque mode (conscient / inconscient) repose sur micro-mécanismes :
+A. Version consciente
+                                                                                                                                                                                                                                       * Intention : Décider sur quoi porter son attention (ex : je regarde l’écran, pas les passants).
+
+                                                                                                                                                                                                                                       * Focalisation : Maintenir l’attention sur l’objet choisi (ex : je continue à lire malgré le bruit).
+
+                                                                                                                                                                                                                                       * Exclusion volontaire : Écarter d’autres stimuli (ex : ignorer les notifications pendant que je lis).
+
+B. Version inconsciente
+                                                                                                                                                                                                                                          * Détection automatique de pertinence : Stimulus relié à un besoin ou intérêt (ex : odeur de café si on aime le café).
+
+                                                                                                                                                                                                                                          * Réflexe de survie : Réaction immédiate aux signaux de danger (ex : sursaut à un coup de klaxon).
+
+                                                                                                                                                                                                                                          * Conditionnement / Habitude : Réponse automatique liée à l’expérience (ex : reconnaître instantanément la voix d’un proche).
+
+________________
+
+
+Schéma ASCII – Sélection attentionnelle éclatée
+vbnet
+CopierModifier
+┌────────────────────────────────────────────────┐
+│           SÉLECTION ATTENTIONNELLE              │
+│ Orienter volontairement ou automatiquement     │
+│ son attention sur certains stimuli              │
+└────────────────────────────────────────────────┘
+                      │
+     ┌────────────────┴─────────────────┐
+     ▼                                  ▼
+┌───────────────────────┐     ┌───────────────────────┐
+│ Version consciente     │     │ Version inconsciente  │
+│ (choix délibéré)       │     │ (réflexe automatique) │
+└─────────┬──────────────┘     └─────────┬──────────────┘
+          ▼                              ▼
+  ┌──────────────┐             ┌───────────────────┐
+  │ Intention    │             │ Détection auto.    │
+  │ (décider)    │             │ de pertinence      │
+  └──────────────┘             └───────────────────┘
+  ┌──────────────┐             ┌───────────────────┐
+  │ Focalisation │             │ Réflexe de survie │
+  │ (maintenir)  │             └───────────────────┘
+  └──────────────┘             ┌───────────────────┐
+  ┌───────────────────┐        │ Conditionnement / │
+  │ Exclusion vol.     │        │ Habitude          │
+  │ (ignorer autres)   │        └───────────────────┘
+  └───────────────────┘
+
+
+________________
+
+
+💡 En résumé :
+                                                                                                                                                                                                                                             * Noyau = capacité de sélectionner ce qui entre dans la conscience.
+
+                                                                                                                                                                                                                                             * Noyau du noyau = deux grands modes : conscient et inconscient.
+
+                                                                                                                                                                                                                                             * Noyau du noyau du noyau = micro-mécanismes précis qui réalisent cette sélection.
+
+
+1. NOYAU
+Priorisation
+Mécanisme mental qui hiérarchise automatiquement ou consciemment les informations perçues pour décider lesquelles traiter en premier.
+________________
+
+
+2. NOYAU DU NOYAU
+Deux modes principaux :
+                                                                                                                                                                                                                                                1. Importance perçue
+
+                                                                                                                                                                                                                                                   * Évaluation rapide de la pertinence ou de l’urgence d’une information.
+
+                                                                                                                                                                                                                                                   * Exemple : Répondre d’abord à un appel urgent avant de lire un SMS publicitaire.
+
+                                                                                                                                                                                                                                                      2. Énergie disponible
+
+                                                                                                                                                                                                                                                         * Choix basé sur le niveau de ressources mentales, physiques ou émotionnelles au moment présent.
+
+                                                                                                                                                                                                                                                         * Exemple : Reporter une tâche complexe si on est épuisé.
+
+________________
+
+
+3. NOYAU DU NOYAU DU NOYAU
+Chaque mode repose sur des micro-mécanismes :
+A. Importance perçue
+                                                                                                                                                                                                                                                            * Urgence : Information liée à un temps critique (ex : alarme incendie).
+
+                                                                                                                                                                                                                                                            * Pertinence personnelle : Lien direct avec un objectif ou un besoin actuel (ex : email de son futur employeur).
+
+                                                                                                                                                                                                                                                            * Gravité perçue : Impact négatif si ignoré (ex : facture impayée).
+
+B. Énergie disponible
+                                                                                                                                                                                                                                                               * Fatigue / Vigilance : Niveau d’attention possible (ex : impossible de se concentrer après 12h de travail).
+
+                                                                                                                                                                                                                                                               * Motivation : Envie réelle de traiter l’info (ex : motivation plus forte pour répondre à un ami qu’à un inconnu).
+
+                                                                                                                                                                                                                                                               * Charge cognitive : Complexité perçue de la tâche (ex : lire un rapport dense vs. regarder un message court).
+
+________________
+
+
+Schéma ASCII – Priorisation éclatée
+sql
+CopierModifier
+┌────────────────────────────────────────────────┐
+│                 PRIORISATION                   │
+│ Hiérarchisation des infos à traiter en premier │
+└────────────────────────────────────────────────┘
+                      │
+     ┌────────────────┴─────────────────┐
+     ▼                                  ▼
+┌───────────────────────┐     ┌───────────────────────┐
+│ Importance perçue     │     │ Énergie disponible    │
+│ (pertinence / urgence)│     │ (ressources mentales) │
+└─────────┬──────────────┘     └─────────┬──────────────┘
+          ▼                              ▼
+  ┌──────────────┐             ┌───────────────────┐
+  │ Urgence      │             │ Fatigue / Vigilance│
+  │ (temps)      │             └───────────────────┘
+  └──────────────┘             ┌───────────────────┐
+  ┌──────────────┐             │ Motivation        │
+  │ Pertinence   │             └───────────────────┘
+  │ personnelle  │             ┌───────────────────┐
+  └──────────────┘             │ Charge cognitive  │
+  ┌──────────────┐             └───────────────────┘
+  │ Gravité      │
+  │ perçue       │
+  └──────────────┘
+
+
+________________
+
+
+💡 Résumé :
+                                                                                                                                                                                                                                                                  * Noyau = capacité à trier l’information.
+
+                                                                                                                                                                                                                                                                  * Noyau du noyau = importance perçue et énergie disponible.
+
+                                                                                                                                                                                                                                                                  * Noyau du noyau du noyau = critères précis qui dictent l’ordre de traitement.
+
+
+1. NOYAU
+Exclusion
+Mécanisme par lequel le cerveau ignore certaines informations, consciemment ou inconsciemment, afin de ne pas les traiter.
+________________
+
+
+2. NOYAU DU NOYAU
+Deux modes principaux :
+                                                                                                                                                                                                                                                                     1. Filtrage inconscient
+
+                                                                                                                                                                                                                                                                        * Élimination automatique des stimuli considérés comme non pertinents ou trop répétitifs.
+
+                                                                                                                                                                                                                                                                        * Exemple : Ne plus entendre le bruit de fond d’un climatiseur après quelques minutes.
+
+                                                                                                                                                                                                                                                                           2. Rejet mental
+
+                                                                                                                                                                                                                                                                              * Élimination volontaire ou semi-volontaire des informations dérangeantes ou incompatibles avec ses croyances ou émotions.
+
+                                                                                                                                                                                                                                                                              * Exemple : Éviter de lire un rapport qui montre que son projet échoue.
+
+________________
+
+
+3. NOYAU DU NOYAU DU NOYAU
+Chaque mode repose sur des micro-mécanismes :
+A. Filtrage inconscient
+                                                                                                                                                                                                                                                                                 * Habituation sensorielle : Le cerveau s’habitue à un stimulus constant et cesse de le signaler (ex : bruit d’un ventilateur).
+
+                                                                                                                                                                                                                                                                                 * Pertinence faible : Le stimulus ne sert pas aux objectifs immédiats (ex : conversations lointaines dans un café).
+
+                                                                                                                                                                                                                                                                                 * Surcharge sensorielle : Le cerveau élimine certaines infos pour éviter d’être saturé (ex : ignorer détails visuels inutiles dans une foule).
+
+B. Rejet mental
+                                                                                                                                                                                                                                                                                    * Biais de confirmation : Ne retenir que ce qui confirme ses croyances (ex : lire uniquement les nouvelles qui soutiennent son opinion politique).
+
+                                                                                                                                                                                                                                                                                    * Évitement émotionnel : Ne pas voir ou entendre ce qui génère de la peur, de la honte ou de la tristesse (ex : éviter une discussion sur un sujet traumatisant).
+
+                                                                                                                                                                                                                                                                                    * Tabou social ou personnel : Refuser mentalement un sujet interdit dans sa culture ou ses valeurs (ex : ignorer les signes d’un problème dans sa famille).
+
+________________
+
+
+Schéma ASCII – Exclusion éclatée
+bash
+CopierModifier
+┌────────────────────────────────────────────────┐
+│                   EXCLUSION                    │
+│ Ignorer ou écarter certaines informations      │
+└────────────────────────────────────────────────┘
+                      │
+     ┌────────────────┴─────────────────┐
+     ▼                                  ▼
+┌───────────────────────┐     ┌───────────────────────┐
+│ Filtrage inconscient  │     │ Rejet mental          │
+│ (automatique)         │     │ (volontaire / semi)   │
+└─────────┬──────────────┘     └─────────┬──────────────┘
+          ▼                              ▼
+  ┌──────────────┐             ┌───────────────────┐
+  │ Habituation  │             │ Biais confirmation│
+  │ sensorielle  │             └───────────────────┘
+  └──────────────┘             ┌───────────────────┐
+  ┌──────────────┐             │ Évitement émotion │
+  │ Pertinence   │             └───────────────────┘
+  │ faible       │             ┌───────────────────┐
+  └──────────────┘             │ Tabou social/pers │
+  ┌──────────────┐             └───────────────────┘
+  │ Surcharge    │
+  │ sensorielle  │
+  └──────────────┘
+
+
+
+
+
+
+
+
+Schéma ASCII – Architecture complète du Filtre perceptif
+sql
+CopierModifier
+┌────────────────────────────────────────────────────────────┐
+│                     FILTRE PERCEPTIF                        │
+│ Mécanisme mental qui décide ce que l’on perçoit et ignore   │
+└────────────────────────────────────────────────────────────┘
+         │
+ ┌───────┼───────────────────────┬───────────────────────────┐
+ ▼       ▼                       ▼
+┌────────────────┐    ┌─────────────────────┐      ┌──────────────────────┐
+│ SÉLECTION      │    │ PRIORISATION        │      │ EXCLUSION             │
+│ ATTENTIONNELLE │    │ (Hiérarchisation)   │      │ (Ignorer / Écarter)   │
+└─────┬──────────┘    └─────┬───────────────┘      └─────┬────────────────┘
+      ▼                     ▼                           ▼
+      │                     │                           │
+      │                     │                           │
+      ▼                     ▼                           ▼
+┌──────────────┐   ┌──────────────────┐        ┌──────────────────┐
+│ Version      │   │ Importance perçue│        │ Filtrage          │
+│ consciente   │   │ (pertinence /    │        │ inconscient       │
+│ (choix vol.) │   │ urgence)         │        │ (automatique)     │
+└──────────────┘   └─────────┬────────┘        └─────────┬────────┘
+┌──────────────┐             ▼                          ▼
+│ Version      │     ┌──────────────┐          ┌──────────────┐
+│ inconsciente │     │ Urgence      │          │ Habituation  │
+│ (réflexe)    │     └──────────────┘          │ sensorielle  │
+└──────────────┘     ┌──────────────┐          └──────────────┘
+                     │ Pertinence   │          ┌──────────────┐
+┌──────────────┐     │ personnelle  │          │ Pertinence   │
+│ Intention    │     └──────────────┘          │ faible       │
+│ (décider)    │     ┌──────────────┐          └──────────────┘
+└──────────────┘     │ Gravité      │          ┌──────────────┐
+┌──────────────┐     │ perçue       │          │ Surcharge    │
+│ Focalisation │     └──────────────┘          │ sensorielle  │
+│ (maintenir)  │                               └──────────────┘
+└──────────────┘                              
+┌───────────────────┐   ┌──────────────────┐   ┌──────────────────┐
+│ Exclusion volontaire│  │ Énergie dispo.  │   │ Rejet mental      │
+│ (ignorer autres)   │  │ (ressources)     │   │ (volontaire/semi) │
+└───────────────────┘   └─────────┬────────┘   └─────────┬────────┘
+                                   ▼                     ▼
+                         ┌──────────────┐        ┌──────────────┐
+                         │ Fatigue /    │        │ Biais        │
+                         │ Vigilance    │        │ confirmation │
+                         └──────────────┘        └──────────────┘
+                         ┌──────────────┐        ┌──────────────┐
+                         │ Motivation   │        │ Évitement    │
+                         └──────────────┘        │ émotionnel   │
+                         ┌──────────────┐        └──────────────┘
+                         │ Charge       │        ┌──────────────┐
+                         │ cognitive    │        │ Tabou social │
+                         └──────────────┘        │ / personnel  │
+                                                 └──────────────┘
+
+
+________________
+
+
+Comment lire ce schéma
+                                                                                                                                                                                                                                                                                       1. En haut : Le Filtre perceptif – il régule ce qui entre ou non dans ta conscience.
+
+                                                                                                                                                                                                                                                                                       2. Trois branches :
+
+                                                                                                                                                                                                                                                                                          * Sélection attentionnelle → choisir où tu portes ton regard (conscient ou inconscient).
+
+                                                                                                                                                                                                                                                                                          * Priorisation → trier selon importance et énergie disponible.
+
+                                                                                                                                                                                                                                                                                          * Exclusion → éliminer ce qui est jugé inutile ou dérangeant.
+
+                                                                                                                                                                                                                                                                                             3. En profondeur : Chaque branche se décompose en micro-mécanismes qui opèrent souvent sans que tu t’en rendes compte.
+Schéma ASCII – Architecture complète du paradigme humain
+vbnet
+CopierModifier
+┌──────────────────────────────────────────────────────────────┐
+│                        PARADIGME HUMAIN                       │
+│  Modèle mental global qui structure la perception,            │
+│  l’interprétation et l’action                                 │
+└──────────────────────────────────────────────────────────────┘
+         │
+ ┌───────┼───────────────────────────────┬───────────────────────────────┐
+ ▼       ▼                               ▼
+┌────────────────────────────┐  ┌───────────────────────────┐  ┌───────────────────────────┐
+│  STRUCTURE COGNITIVE       │  │   FILTRE PERCEPTIF         │  │ CADRE INTERPRÉTATIF       │
+│  (charpente mentale)       │  │ (ce qui entre dans la      │  │ (donne sens et cohérence) │
+└─────┬──────────────────────┘  │ conscience)               │  └─────┬────────────────────┘
+      │                         └─────────┬─────────────────┘        │
+      ▼                                   ▼                          ▼
+  ┌───────────────┐     ┌───────────────────────────┐       ┌───────────────────────────┐
+  │ Croyances de  │     │ SÉLECTION ATTENTIONNELLE   │       │ Système de valeurs        │
+  │ base          │     │ (conscient / inconscient) │       │ (ce qui compte vraiment)  │
+  ├───────────────┤     ├───────────────────────────┤       ├───────────────────────────┤
+  │ Modèles       │     │ PRIORISATION               │       │ Logique interne           │
+  │ mentaux       │     │ (importance / énergie)     │       │ (comment relier les infos)│
+  ├───────────────┤     ├───────────────────────────┤       ├───────────────────────────┤
+  │ Schémas       │     │ EXCLUSION                  │       │ Langage interne           │
+  │ acquis        │     │ (inconscient / volontaire) │       │ (mots et concepts utilisés)│
+  └───────────────┘     └───────────────────────────┘       └───────────────────────────┘
+      │                         │                                 │
+      ▼                         ▼                                 ▼
+  ┌───────────────┐     ┌────────────────────┐            ┌────────────────────┐
+  │ Ontologie     │     │ Version consciente │            │ Valeurs morales    │
+  │ personnelle   │     │ Intention / focal. │            │ Croyances éthiques │
+  ├───────────────┤     ├────────────────────┤            ├────────────────────┤
+  │ Vision du     │     │ Version inconsc.   │            │ Cohérence logique  │
+  │ monde         │     │ Détection / réflexe│            │ Narratif personnel │
+  ├───────────────┤     ├────────────────────┤            ├────────────────────┤
+  │ Jugement sur  │     │ Importance perçue  │            │ Mots-clés mentaux  │
+  │ les autres    │     │ Urgence / gravité  │            │ Métaphores utilisées│
+  ├───────────────┤     ├────────────────────┤            └────────────────────┘
+  │ Représent.    │     │ Énergie dispo.     │
+  │ simplifiées   │     │ Motivation / charge│
+  ├───────────────┤     ├────────────────────┤
+  │ Analogies     │     │ Filtrage inconsc.  │
+  │ structurantes │     │ Habituation / faible pertinence│
+  ├───────────────┤     ├────────────────────┤
+  │ Raccourcis    │     │ Rejet mental       │
+  │ conceptuels   │     │ Biais confirm. / évitement│
+  ├───────────────┤     └────────────────────┘
+  │ Schémas       │
+  │ émotionnels   │
+  ├───────────────┤
+  │ Schémas       │
+  │ cognitifs     │
+  ├───────────────┤
+  │ Schémas       │
+  │ comportement. │
+  └───────────────┘
+
+
+________________
+
+
+Comment lire cette carte
+                                                                                                                                                                                                                                                                                             1. En haut : Le paradigme humain → vision globale qui structure tout.
+
+                                                                                                                                                                                                                                                                                             2. Trois grands piliers :
+
+                                                                                                                                                                                                                                                                                                * Structure cognitive → la charpente interne (croyances, modèles mentaux, schémas acquis).
+
+                                                                                                                                                                                                                                                                                                * Filtre perceptif → ce qui entre ou non dans ta conscience (sélection, priorisation, exclusion).
+
+                                                                                                                                                                                                                                                                                                * Cadre interprétatif → comment tu donnes du sens et construis une cohérence interne.
+
+                                                                                                                                                                                                                                                                                                   3. En bas : Les micro-mécanismes qui font fonctionner chaque pilier.
+
+📌 Qu’est-ce que le Cadre interprétatif ?
+C’est le mécanisme mental qui permet à un être humain de donner du sens aux informations qu’il perçoit.
+                                                                                                                                                                                                                                                                                                      * Il transforme des faits bruts en interprétations personnelles.
+
+                                                                                                                                                                                                                                                                                                      * Il relie ce que l’on voit, entend ou vit à nos croyances, valeurs et expériences passées.
+
+                                                                                                                                                                                                                                                                                                      * Il agit comme un filtre de signification : deux personnes peuvent vivre la même situation mais l’interpréter complètement différemment.
+
+💡 Image mentale :
+Si le Filtre perceptif choisit quelles infos entrent dans ta conscience,
+le Cadre interprétatif décide comment ces infos vont être comprises.
+________________
+
+
+🔹 1. Système de valeurs
+Ce qui est jugé important ou non par la personne.
+                                                                                                                                                                                                                                                                                                         * C’est la boussole intérieure qui oriente nos jugements et décisions.
+
+                                                                                                                                                                                                                                                                                                         * Définit ce qui est bien/mal, juste/injuste, prioritaire/secondaire.
+
+                                                                                                                                                                                                                                                                                                         * Influencé par la culture, l’éducation, la religion, l’expérience personnelle.
+
+Exemples :
+                                                                                                                                                                                                                                                                                                            * Valeur "honnêteté" → une petite fraude fiscale est inacceptable.
+
+                                                                                                                                                                                                                                                                                                            * Valeur "liberté" → refuser un emploi trop contrôlant.
+
+                                                                                                                                                                                                                                                                                                            * Valeur "famille" → refuser un poste prestigieux mais éloigné des proches.
+
+________________
+
+
+🔹 2. Logique interne
+La façon dont on relie les événements entre eux dans notre esprit.
+                                                                                                                                                                                                                                                                                                               * C’est la structure narrative personnelle qui explique "pourquoi les choses arrivent".
+
+                                                                                                                                                                                                                                                                                                               * Elle peut être rationnelle ou non, mais elle donne une cohérence interne à notre vision du monde.
+
+                                                                                                                                                                                                                                                                                                               * Détermine les liens de cause à effet que l’on perçoit.
+
+Exemples :
+                                                                                                                                                                                                                                                                                                                  * "Si j’ai échoué, c’est parce que je ne suis pas fait pour ça" → logique auto-limitante.
+
+                                                                                                                                                                                                                                                                                                                  * "Si j’ai échoué, c’est parce que je n’avais pas encore les bonnes compétences" → logique de progression.
+
+                                                                                                                                                                                                                                                                                                                  * "Les mauvaises choses arrivent toujours quand je commence à être heureux" → logique fataliste.
+
+________________
+
+
+🔹 3. Langage interne
+Les mots et concepts utilisés pour expliquer la réalité.
+                                                                                                                                                                                                                                                                                                                     * C’est le vocabulaire mental et les métaphores qui forment notre narration intérieure.
+
+                                                                                                                                                                                                                                                                                                                     * Influence directement nos émotions et comportements.
+
+                                                                                                                                                                                                                                                                                                                     * Les mots choisis façonnent notre perception.
+
+Exemples :
+                                                                                                                                                                                                                                                                                                                        * Dire "Je suis coincé" vs "Je suis en pause" → influence la motivation.
+
+                                                                                                                                                                                                                                                                                                                        * Dire "C’est un combat" vs "C’est un défi" → modifie l’état d’esprit face à un obstacle.
+
+                                                                                                                                                                                                                                                                                                                        * Dire "Je suis nul" vs "Je suis en apprentissage" → change la perception de soi.
+
+________________
+
+
+Résumé visuel rapide
+yaml
+CopierModifier
+┌──────────────────────────────────────────────┐
+│             CADRE INTERPRÉTATIF              │
+│ Donne du sens et relie les informations      │
+└──────────────────────────────────────────────┘
+     │
+     ├── Système de valeurs
+     │      → Ce qui est important / prioritaire
+     │      → Ex : famille, honnêteté, liberté
+     │
+     ├── Logique interne
+     │      → Liens de cause à effet perçus
+     │      → Ex : échec = incompétence ou apprentissage
+     │
+     └── Langage interne
+            → Mots et métaphores utilisées
+            → Ex : combat, défi, prison, opportunité
+
+
+
+
+
+
+1. NOYAU
+Système de valeurs
+Ensemble hiérarchisé de principes et de croyances qui déterminent ce qui est jugé important, souhaitable ou acceptable par une personne.
+                                                                                                                                                                                                                                                                                                                           * C’est la boussole intérieure qui oriente jugements, choix et comportements.
+
+                                                                                                                                                                                                                                                                                                                           * Influence profonde sur les décisions et la manière d’interpréter la réalité.
+
+________________
+
+
+2. NOYAU DU NOYAU
+Trois axes principaux :
+                                                                                                                                                                                                                                                                                                                              1. Dimension morale
+
+                                                                                                                                                                                                                                                                                                                                 * Ce qui est considéré comme bien ou mal.
+
+                                                                                                                                                                                                                                                                                                                                 * Influence le jugement éthique et la conduite.
+
+                                                                                                                                                                                                                                                                                                                                    2. Dimension prioritaire
+
+                                                                                                                                                                                                                                                                                                                                       * Ce qui est jugé plus important que le reste.
+
+                                                                                                                                                                                                                                                                                                                                       * Ordonne les priorités dans la vie.
+
+                                                                                                                                                                                                                                                                                                                                          3. Dimension contextuelle
+
+                                                                                                                                                                                                                                                                                                                                             * Ce qui varie selon la culture, la religion, l’éducation, l’expérience.
+
+                                                                                                                                                                                                                                                                                                                                             * Explique pourquoi deux personnes peuvent avoir des systèmes de valeurs différents.
+
+________________
+
+
+3. NOYAU DU NOYAU DU NOYAU
+Chaque axe repose sur des micro-mécanismes :
+A. Dimension morale
+                                                                                                                                                                                                                                                                                                                                                * Intégrité personnelle : cohérence entre paroles et actes (ex : refuser de mentir même si c’est avantageux).
+
+                                                                                                                                                                                                                                                                                                                                                * Éthique sociale : respect des règles et lois partagées (ex : ne pas frauder fiscalement).
+
+                                                                                                                                                                                                                                                                                                                                                * Responsabilité envers autrui : agir pour éviter de nuire (ex : refuser de vendre un produit dangereux).
+
+B. Dimension prioritaire
+                                                                                                                                                                                                                                                                                                                                                   * Objectifs de vie dominants : ce qu’on veut avant tout (ex : famille, carrière, liberté).
+
+                                                                                                                                                                                                                                                                                                                                                   * Sacrifices acceptés : ce qu’on est prêt à laisser tomber pour préserver l’essentiel (ex : refuser une promotion pour rester proche de ses enfants).
+
+                                                                                                                                                                                                                                                                                                                                                   * Lignes rouges personnelles : ce qu’on ne franchira jamais (ex : ne jamais accepter la corruption).
+
+C. Dimension contextuelle
+                                                                                                                                                                                                                                                                                                                                                      * Culture : normes collectives (ex : solidarité familiale prioritaire dans certaines cultures).
+
+                                                                                                                                                                                                                                                                                                                                                      * Religion/spiritualité : vision transcendante ou morale supérieure (ex : compassion chrétienne, dharma hindou).
+
+                                                                                                                                                                                                                                                                                                                                                      * Expérience vécue : leçons tirées des événements passés (ex : valoriser la sécurité financière après avoir connu la pauvreté).
+
+________________
+
+
+4. Schéma ASCII – Système de valeurs éclaté
+perl
+CopierModifier
+┌────────────────────────────────────────────────────┐
+│               SYSTÈME DE VALEURS                   │
+│ Boussole intérieure qui oriente jugements & choix  │
+└────────────────────────────────────────────────────┘
+                      │
+     ┌────────────────┼─────────────────────┬──────────────────────────┐
+     ▼                ▼                     ▼
+┌────────────────┐  ┌─────────────────┐   ┌─────────────────────────┐
+│ Dimension      │  │ Dimension       │   │ Dimension contextuelle  │
+│ morale         │  │ prioritaire     │   │ (influence extérieure)  │
+└─────┬──────────┘  └─────┬───────────┘   └─────────┬───────────────┘
+      ▼                   ▼                         ▼
+┌──────────────┐  ┌────────────────┐        ┌─────────────────────┐
+│ Intégrité    │  │ Objectifs vie  │        │ Culture              │
+│ personnelle  │  │ dominants      │        └─────────────────────┘
+└──────────────┘  └────────────────┘        ┌─────────────────────┐
+┌──────────────┐  ┌────────────────┐        │ Religion/spiritualité│
+│ Éthique      │  │ Sacrifices     │        └─────────────────────┘
+│ sociale      │  │ acceptés       │        ┌─────────────────────┐
+└──────────────┘  └────────────────┘        │ Expérience vécue     │
+┌──────────────┐  ┌────────────────┐        └─────────────────────┘
+│ Responsabil. │  │ Lignes rouges  │
+│ envers autrui│  │ personnelles   │
+└──────────────┘  └────────────────┘
+
+
+________________
+
+
+💡 En résumé :
+                                                                                                                                                                                                                                                                                                                                                         * Noyau → Le système de valeurs en tant que boussole morale.
+
+                                                                                                                                                                                                                                                                                                                                                         * Noyau du noyau → Trois dimensions : morale, prioritaire, contextuelle.
+
+                                                                                                                                                                                                                                                                                                                                                         * Noyau du noyau du noyau → Les micro-mécanismes qui façonnent les choix et décisions.
+1. NOYAU
+Logique interne
+C’est la structure mentale qui relie les événements entre eux dans notre esprit et qui leur donne un sens cohérent selon notre propre système de pensée.
+                                                                                                                                                                                                                                                                                                                                                            * Elle explique “pourquoi” les choses arrivent.
+
+                                                                                                                                                                                                                                                                                                                                                            * Elle sert de fil conducteur à notre vision du monde.
+
+                                                                                                                                                                                                                                                                                                                                                            * Elle influence nos attentes, notre optimisme ou pessimisme, et nos décisions.
+
+________________
+
+
+2. NOYAU DU NOYAU
+Trois modes principaux :
+                                                                                                                                                                                                                                                                                                                                                               1. Logique causale
+
+                                                                                                                                                                                                                                                                                                                                                                  * Relation cause → effet basée sur l’expérience ou la croyance.
+
+                                                                                                                                                                                                                                                                                                                                                                  * Ex. : “J’ai échoué car je n’ai pas assez travaillé.”
+
+                                                                                                                                                                                                                                                                                                                                                                     2. Logique narrative
+
+                                                                                                                                                                                                                                                                                                                                                                        * Histoire personnelle qui relie les événements.
+
+                                                                                                                                                                                                                                                                                                                                                                        * Ex. : “Les épreuves forgent le caractère.”
+
+                                                                                                                                                                                                                                                                                                                                                                           3. Logique conditionnelle
+
+                                                                                                                                                                                                                                                                                                                                                                              * Règles internes du type “si… alors…”.
+
+                                                                                                                                                                                                                                                                                                                                                                              * Ex. : “Si je me montre trop gentil, on va me marcher dessus.”
+
+________________
+
+
+3. NOYAU DU NOYAU DU NOYAU
+Chaque mode repose sur des micro-mécanismes :
+A. Logique causale
+                                                                                                                                                                                                                                                                                                                                                                                 * Observation empirique : conclusions tirées de l’expérience directe (ex : j’ai travaillé dur → j’ai eu de bons résultats).
+
+                                                                                                                                                                                                                                                                                                                                                                                 * Biais cognitifs : conclusions influencées par des raccourcis mentaux (ex : j’ai échoué → je suis nul).
+
+                                                                                                                                                                                                                                                                                                                                                                                 * Généralisation : transformer une expérience en règle générale (ex : un échec = toujours un échec).
+
+B. Logique narrative
+                                                                                                                                                                                                                                                                                                                                                                                    * Sens attribué : interprétation émotionnelle des événements (ex : cette rupture m’a rendu plus fort).
+
+                                                                                                                                                                                                                                                                                                                                                                                    * Continuité personnelle : relier les expériences à une identité (ex : je suis un battant).
+
+                                                                                                                                                                                                                                                                                                                                                                                    * Mythologie personnelle : histoires répétées qui définissent notre parcours (ex : j’ai toujours dû me battre pour m’en sortir).
+
+C. Logique conditionnelle
+                                                                                                                                                                                                                                                                                                                                                                                       * Règles protectrices : stratégies pour éviter la douleur (ex : si je ne prends pas de risques, je ne souffrirai pas).
+
+                                                                                                                                                                                                                                                                                                                                                                                       * Règles de réussite : stratégies pour atteindre un but (ex : si je travaille plus, je réussirai).
+
+                                                                                                                                                                                                                                                                                                                                                                                       * Règles d’interaction : façons préétablies de gérer les relations (ex : si quelqu’un ne m’appelle pas, c’est qu’il ne m’apprécie pas).
+
+________________
+
+
+4. Schéma ASCII – Logique interne éclatée
+scss
+CopierModifier
+┌──────────────────────────────────────────────────────┐
+│                  LOGIQUE INTERNE                     │
+│ Structure mentale qui relie et explique les faits     │
+└──────────────────────────────────────────────────────┘
+                     │
+     ┌───────────────┼───────────────────────┬────────────────────────┐
+     ▼               ▼                       ▼
+┌────────────────┐  ┌─────────────────┐    ┌───────────────────────┐
+│ Logique causale│  │ Logique         │    │ Logique conditionnelle │
+│ (cause → effet)│  │ narrative       │    │ (“si… alors…”)         │
+└─────┬──────────┘  └─────┬───────────┘    └──────────┬─────────────┘
+      ▼                   ▼                           ▼
+┌──────────────┐  ┌────────────────┐         ┌─────────────────────┐
+│ Observation  │  │ Sens attribué  │         │ Règles protectrices  │
+│ empirique    │  └────────────────┘         └─────────────────────┘
+└──────────────┘  ┌────────────────┐         ┌─────────────────────┐
+┌──────────────┐  │ Continuité     │         │ Règles de réussite   │
+│ Biais        │  │ personnelle   │         └─────────────────────┘
+│ cognitifs    │  └────────────────┘         ┌─────────────────────┐
+└──────────────┘  ┌────────────────┐         │ Règles d’interaction │
+┌──────────────┐  │ Mythologie     │         └─────────────────────┘
+│ Généralisat. │  │ personnelle   │
+└──────────────┘  └────────────────┘
+
+
+________________
+
+
+💡 En résumé :
+                                                                                                                                                                                                                                                                                                                                                                                          * Noyau → Logique interne comme charpente du sens personnel.
+
+                                                                                                                                                                                                                                                                                                                                                                                          * Noyau du noyau → Trois grands modes : causale, narrative, conditionnelle.
+
+                                                                                                                                                                                                                                                                                                                                                                                          * Noyau du noyau du noyau → Micro-mécanismes qui façonnent notre interprétation.
+
+
+
+
+
+1. NOYAU
+Langage interne
+Ensemble des mots, phrases, métaphores et concepts que nous utilisons dans notre dialogue intérieur pour décrire le monde, les autres et nous-mêmes.
+                                                                                                                                                                                                                                                                                                                                                                                             * C’est la voix dans notre tête qui commente la réalité.
+
+                                                                                                                                                                                                                                                                                                                                                                                             * Il influence directement nos émotions, notre motivation et nos actions.
+
+                                                                                                                                                                                                                                                                                                                                                                                             * Modifie notre perception selon les mots choisis.
+
+________________
+
+
+2. NOYAU DU NOYAU
+Trois composantes principales :
+                                                                                                                                                                                                                                                                                                                                                                                                1. Vocabulaire descriptif
+
+                                                                                                                                                                                                                                                                                                                                                                                                   * Les mots employés pour décrire les faits, les personnes et soi-même.
+
+                                                                                                                                                                                                                                                                                                                                                                                                   * Peut être positif, neutre ou négatif.
+
+                                                                                                                                                                                                                                                                                                                                                                                                      2. Mots-clés émotionnels
+
+                                                                                                                                                                                                                                                                                                                                                                                                         * Termes qui déclenchent ou amplifient des émotions.
+
+                                                                                                                                                                                                                                                                                                                                                                                                         * Peuvent être consciemment choisis ou venir automatiquement.
+
+                                                                                                                                                                                                                                                                                                                                                                                                            3. Métaphores et cadres mentaux
+
+                                                                                                                                                                                                                                                                                                                                                                                                               * Images ou analogies utilisées pour représenter la réalité.
+
+                                                                                                                                                                                                                                                                                                                                                                                                               * Structurent la vision du monde (ex : “la vie est un combat” vs “la vie est un voyage”).
+
+________________
+
+
+3. NOYAU DU NOYAU DU NOYAU
+Chaque composante repose sur des micro-mécanismes :
+A. Vocabulaire descriptif
+                                                                                                                                                                                                                                                                                                                                                                                                                  * Auto-étiquetage : Mots utilisés pour se décrire (ex : “je suis nul” vs “je suis en apprentissage”).
+
+                                                                                                                                                                                                                                                                                                                                                                                                                  * Description du monde : Terme choisi pour parler des situations (ex : “opportunité” vs “problème”).
+
+                                                                                                                                                                                                                                                                                                                                                                                                                  * Description des autres : Mots employés pour qualifier autrui (ex : “collaborateur” vs “rival”).
+
+B. Mots-clés émotionnels
+                                                                                                                                                                                                                                                                                                                                                                                                                     * Amplificateurs positifs : Mots qui suscitent énergie et optimisme (ex : “possibilité”, “chance”).
+
+                                                                                                                                                                                                                                                                                                                                                                                                                     * Amplificateurs négatifs : Mots qui renforcent peur ou découragement (ex : “impossible”, “piège”).
+
+                                                                                                                                                                                                                                                                                                                                                                                                                     * Déclencheurs émotionnels : Mots associés à des souvenirs ou expériences fortes (ex : “trahison”, “réussite”).
+
+C. Métaphores et cadres mentaux
+                                                                                                                                                                                                                                                                                                                                                                                                                        * Cadres combatifs : “La vie est un champ de bataille” → stratégie défensive.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                        * Cadres exploratoires : “La vie est un voyage” → curiosité et adaptation.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                        * Cadres transactionnels : “La vie est un marché” → calcul et échange.
+
+________________
+
+
+4. Schéma ASCII – Langage interne éclaté
+pgsql
+CopierModifier
+┌──────────────────────────────────────────────────────┐
+│                  LANGAGE INTERNE                     │
+│ Dialogue intérieur, mots et images qui forment       │
+│ la perception de la réalité                          │
+└──────────────────────────────────────────────────────┘
+                     │
+     ┌───────────────┼────────────────────────┬─────────────────────────┐
+     ▼               ▼                        ▼
+┌────────────────┐  ┌──────────────────┐    ┌────────────────────────┐
+│ Vocabulaire    │  │ Mots-clés        │    │ Métaphores & Cadres    │
+│ descriptif     │  │ émotionnels      │    │ mentaux                │
+└─────┬──────────┘  └─────┬────────────┘    └──────────┬─────────────┘
+      ▼                   ▼                           ▼
+┌──────────────┐  ┌────────────────┐         ┌─────────────────────┐
+│ Auto-        │  │ Amplificateurs │         │ Cadres combatifs    │
+│ étiquetage   │  │ positifs       │         └─────────────────────┘
+└──────────────┘  └────────────────┘         ┌─────────────────────┐
+┌──────────────┐  ┌────────────────┐         │ Cadres exploratoires│
+│ Description  │  │ Amplificateurs │         └─────────────────────┘
+│ du monde     │  │ négatifs       │         ┌─────────────────────┐
+└──────────────┘  └────────────────┘         │ Cadres transaction. │
+┌──────────────┐  ┌────────────────┐         └─────────────────────┘
+│ Description  │  │ Déclencheurs   │
+│ des autres   │  │ émotionnels    │
+└──────────────┘  └────────────────┘
+
+
+________________
+
+
+💡 En résumé :
+                                                                                                                                                                                                                                                                                                                                                                                                                           * Noyau → Langage interne = voix intérieure qui façonne la perception.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                           * Noyau du noyau → vocabulaire descriptif, mots-clés émotionnels, métaphores & cadres mentaux.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                           * Noyau du noyau du noyau → micro-mécanismes précis qui déterminent si ce langage renforce ou limite.
+
+Voici maintenant le Cadre interprétatif complet éclaté en ASCII, fusionnant :
+                                                                                                                                                                                                                                                                                                                                                                                                                              * Système de valeurs
+
+                                                                                                                                                                                                                                                                                                                                                                                                                              * Logique interne
+
+                                                                                                                                                                                                                                                                                                                                                                                                                              * Langage interne
+
+________________
+
+
+Schéma ASCII – Cadre interprétatif complet
+sql
+CopierModifier
+┌─────────────────────────────────────────────────────────────┐
+│                   CADRE INTERPRÉTATIF                       │
+│ Donne sens aux infos perçues, relie les événements           │
+│ et guide les décisions selon une cohérence personnelle       │
+└─────────────────────────────────────────────────────────────┘
+          │
+ ┌────────┼────────────────────────┬──────────────────────────┐
+ ▼        ▼                        ▼
+┌─────────────────────┐  ┌──────────────────────────┐  ┌───────────────────────────┐
+│ SYSTÈME DE VALEURS  │  │ LOGIQUE INTERNE           │  │ LANGAGE INTERNE           │
+│ (boussole morale)   │  │ (structure du sens)       │  │ (voix intérieure)         │
+└─────┬───────────────┘  └─────┬────────────────────┘  └─────┬─────────────────────┘
+      ▼                        ▼                             ▼
+  ┌─────────────┐       ┌──────────────┐               ┌──────────────┐
+  │ Dimension   │       │ Logique      │               │ Vocabulaire  │
+  │ morale      │       │ causale      │               │ descriptif   │
+  └─────┬───────┘       └─────┬────────┘               └─────┬────────┘
+        ▼                     ▼                             ▼
+ ┌──────────────┐      ┌──────────────┐               ┌──────────────┐
+ │ Intégrité    │      │ Observation  │               │ Auto-        │
+ │ personnelle  │      │ empirique    │               │ étiquetage   │
+ └──────────────┘      └──────────────┘               └──────────────┘
+ ┌──────────────┐      ┌──────────────┐               ┌──────────────┐
+ │ Éthique      │      │ Biais        │               │ Description  │
+ │ sociale      │      │ cognitifs    │               │ du monde     │
+ └──────────────┘      └──────────────┘               └──────────────┘
+ ┌──────────────┐      ┌──────────────┐               ┌──────────────┐
+ │ Responsab.   │      │ Généralisat. │               │ Description  │
+ │ envers autrui│      └──────────────┘               │ des autres   │
+ └──────────────┘                                     └──────────────┘
+  ┌─────────────┐       ┌──────────────┐               ┌──────────────┐
+  │ Dimension   │       │ Logique      │               │ Mots-clés    │
+  │ prioritaire │       │ narrative    │               │ émotionnels  │
+  └─────┬───────┘       └─────┬────────┘               └─────┬────────┘
+        ▼                     ▼                             ▼
+ ┌──────────────┐      ┌──────────────┐               ┌──────────────┐
+ │ Objectifs    │      │ Sens attribué│               │ Amplificateurs│
+ │ dominants    │      └──────────────┘               │ positifs      │
+ └──────────────┘      ┌──────────────┐               └──────────────┘
+ ┌──────────────┐      │ Continuité   │               ┌──────────────┐
+ │ Sacrifices   │      │ personnelle  │               │ Amplificateurs│
+ │ acceptés     │      └──────────────┘               │ négatifs      │
+ └──────────────┘      ┌──────────────┐               └──────────────┘
+ ┌──────────────┐      │ Mythologie   │               ┌──────────────┐
+ │ Lignes rouges│      │ personnelle  │               │ Déclencheurs │
+ │ persos       │      └──────────────┘               │ émotionnels  │
+ └──────────────┘                                     └──────────────┘
+  ┌─────────────┐       ┌──────────────┐               ┌──────────────┐
+  │ Dimension   │       │ Logique      │               │ Métaphores & │
+  │ contextuelle│       │ conditionnelle│              │ cadres mentaux│
+  └─────┬───────┘       └─────┬────────┘               └─────┬────────┘
+        ▼                     ▼                             ▼
+ ┌──────────────┐      ┌──────────────┐               ┌──────────────┐
+ │ Culture      │      │ Règles       │               │ Cadres        │
+ └──────────────┘      │ protectrices │               │ combatifs     │
+ ┌──────────────┐      └──────────────┘               └──────────────┘
+ │ Religion/    │      ┌──────────────┐               ┌──────────────┐
+ │ spiritualité │      │ Règles de    │               │ Cadres        │
+ └──────────────┘      │ réussite     │               │ exploratoires │
+ ┌──────────────┐      └──────────────┘               └──────────────┘
+ │ Expérience   │      ┌──────────────┐               ┌──────────────┐
+ │ vécue        │      │ Règles d’    │               │ Cadres        │
+ └──────────────┘      │ interaction  │               │ transaction.  │
+                       └──────────────┘               └──────────────┘
+
+
+________________
+
+
+Comment le lire
+                                                                                                                                                                                                                                                                                                                                                                                                                                 * Colonne 1 : Système de valeurs → ce qui guide moralement et hiérarchise ce qui est important.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                 * Colonne 2 : Logique interne → la façon dont les événements sont reliés et interprétés.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                 * Colonne 3 : Langage interne → les mots et images qui colorent la perception et l’état émotionnel.
+
+
+
+
+Schéma ASCII – Architecture complète du paradigme humain
+scss
+CopierModifier
+┌──────────────────────────────────────────────────────────────────────┐
+│                          PARADIGME HUMAIN                             │
+│ Modèle mental global qui structure la perception, l’interprétation    │
+│ et l’action.                                                          │
+└──────────────────────────────────────────────────────────────────────┘
+         │
+ ┌───────┼─────────────────────────────┬───────────────────────────────┐
+ ▼       ▼                             ▼
+┌───────────────────────────┐  ┌───────────────────────────┐  ┌───────────────────────────┐
+│ STRUCTURE COGNITIVE       │  │ FILTRE PERCEPTIF           │  │ CADRE INTERPRÉTATIF       │
+│ (charpente mentale)       │  │ (sélection d’info)         │  │ (sens et cohérence)       │
+└─────┬─────────────────────┘  └─────┬─────────────────────┘  └─────┬─────────────────────┘
+      │                               │                               │
+      ▼                               ▼                               ▼
+  ┌───────────────┐       ┌──────────────────────────┐       ┌─────────────────────────┐
+  │ Croyances de  │       │ SÉLECTION ATTENTIONNELLE │       │ SYSTÈME DE VALEURS      │
+  │ base          │       │ (conscient/inconscient)  │       │ (boussole morale)       │
+  ├───────────────┤       ├──────────────────────────┤       ├─────────────────────────┤
+  │ Modèles       │       │ PRIORISATION             │       │ LOGIQUE INTERNE         │
+  │ mentaux       │       │ (importance/énergie)     │       │ (structure du sens)     │
+  ├───────────────┤       ├──────────────────────────┤       ├─────────────────────────┤
+  │ Schémas       │       │ EXCLUSION                │       │ LANGAGE INTERNE         │
+  │ acquis        │       │ (ignoré/rejeté)          │       │ (voix intérieure)       │
+  └───────────────┘       └──────────────────────────┘       └─────────────────────────┘
+      │                               │                               │
+      ▼                               ▼                               ▼
+┌──────────────┐         ┌──────────────┐                ┌──────────────┐
+│ Ontologie    │         │ Version      │                │ Dimension    │
+│ personnelle  │         │ consciente   │                │ morale       │
+└──────────────┘         ├──────────────┤                ├──────────────┤
+┌──────────────┐         │ Version      │                │ Dimension    │
+│ Vision du    │         │ inconsciente │                │ prioritaire  │
+│ monde        │         └──────────────┘                ├──────────────┤
+└──────────────┘         ├──────────────┐                │ Dimension    │
+┌──────────────┐         │ Importance   │                │ contextuelle │
+│ Jugement sur │         │ perçue       │                └──────────────┘
+│ les autres   │         ├──────────────┤                ┌──────────────┐
+└──────────────┘         │ Énergie      │                │ Logique      │
+┌──────────────┐         │ dispo.       │                │ causale      │
+│ Représent.   │         └──────────────┘                ├──────────────┤
+│ simplifiées  │         ├──────────────┐                │ Logique      │
+└──────────────┘         │ Filtrage     │                │ narrative    │
+┌──────────────┐         │ inconscient  │                ├──────────────┤
+│ Analogies    │         ├──────────────┤                │ Logique      │
+│ structurantes│         │ Rejet mental │                │ conditionnelle│
+└──────────────┘         └──────────────┘                └──────────────┘
+┌──────────────┐                                             ┌──────────────┐
+│ Raccourcis   │                                             │ Vocabulaire  │
+│ conceptuels  │                                             │ descriptif   │
+└──────────────┘                                             ├──────────────┤
+┌──────────────┐                                             │ Mots-clés    │
+│ Schémas      │                                             │ émotionnels  │
+│ émotionnels  │                                             ├──────────────┤
+└──────────────┘                                             │ Métaphores & │
+┌──────────────┐                                             │ cadres mentaux│
+│ Schémas      │                                             └──────────────┘
+│ cognitifs    │
+└──────────────┘
+┌──────────────┐
+│ Schémas      │
+│ comportement.│
+└──────────────┘
+
+
+________________
+
+
+📌 Lecture
+                                                                                                                                                                                                                                                                                                                                                                                                                                    * Colonne gauche (Structure cognitive) : C’est la charpente mentale — croyances, modèles mentaux, schémas acquis.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                    * Colonne centrale (Filtre perceptif) : Ce qui décide quelles infos entrent dans la conscience — sélection, priorisation, exclusion.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                    * Colonne droite (Cadre interprétatif) : Ce qui donne sens et cohérence — valeurs, logique interne, langage interne.
+
+________________
+
+
+💡 Force de ce modèle
+                                                                                                                                                                                                                                                                                                                                                                                                                                       * Tout est connecté : les croyances influencent le filtre, qui influence l’interprétation, qui renforce les croyances → boucle fermée.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                       * Permet d’identifier où agir : changer une croyance, ajuster son filtre perceptif, ou reformuler son langage interne peut modifier tout le paradigme.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                       * Applicable en coaching, thérapie, communication.
+Schéma ASCII – Architecture complète du paradigme humain
+scss
+CopierModifier
+┌──────────────────────────────────────────────────────────────────────┐
+│                          PARADIGME HUMAIN                             │
+│ Modèle mental global qui structure la perception, l’interprétation    │
+│ et l’action.                                                          │
+└──────────────────────────────────────────────────────────────────────┘
+         │
+ ┌───────┼─────────────────────────────┬───────────────────────────────┐
+ ▼       ▼                             ▼
+┌───────────────────────────┐  ┌───────────────────────────┐  ┌───────────────────────────┐
+│ STRUCTURE COGNITIVE       │  │ FILTRE PERCEPTIF           │  │ CADRE INTERPRÉTATIF       │
+│ (charpente mentale)       │  │ (sélection d’info)         │  │ (sens et cohérence)       │
+└─────┬─────────────────────┘  └─────┬─────────────────────┘  └─────┬─────────────────────┘
+      │                               │                               │
+      ▼                               ▼                               ▼
+  ┌───────────────┐       ┌──────────────────────────┐       ┌─────────────────────────┐
+  │ Croyances de  │       │ SÉLECTION ATTENTIONNELLE │       │ SYSTÈME DE VALEURS      │
+  │ base          │       │ (conscient/inconscient)  │       │ (boussole morale)       │
+  ├───────────────┤       ├──────────────────────────┤       ├─────────────────────────┤
+  │ Modèles       │       │ PRIORISATION             │       │ LOGIQUE INTERNE         │
+  │ mentaux       │       │ (importance/énergie)     │       │ (structure du sens)     │
+  ├───────────────┤       ├──────────────────────────┤       ├─────────────────────────┤
+  │ Schémas       │       │ EXCLUSION                │       │ LANGAGE INTERNE         │
+  │ acquis        │       │ (ignoré/rejeté)          │       │ (voix intérieure)       │
+  └───────────────┘       └──────────────────────────┘       └─────────────────────────┘
+      │                               │                               │
+      ▼                               ▼                               ▼
+┌──────────────┐         ┌──────────────┐                ┌──────────────┐
+│ Ontologie    │         │ Version      │                │ Dimension    │
+│ personnelle  │         │ consciente   │                │ morale       │
+└──────────────┘         ├──────────────┤                ├──────────────┤
+┌──────────────┐         │ Version      │                │ Dimension    │
+│ Vision du    │         │ inconsciente │                │ prioritaire  │
+│ monde        │         └──────────────┘                ├──────────────┤
+└──────────────┘         ├──────────────┐                │ Dimension    │
+┌──────────────┐         │ Importance   │                │ contextuelle │
+│ Jugement sur │         │ perçue       │                └──────────────┘
+│ les autres   │         ├──────────────┤                ┌──────────────┐
+└──────────────┘         │ Énergie      │                │ Logique      │
+┌──────────────┐         │ dispo.       │                │ causale      │
+│ Représent.   │         └──────────────┘                ├──────────────┤
+│ simplifiées  │         ├──────────────┐                │ Logique      │
+└──────────────┘         │ Filtrage     │                │ narrative    │
+┌──────────────┐         │ inconscient  │                ├──────────────┤
+│ Analogies    │         ├──────────────┤                │ Logique      │
+│ structurantes│         │ Rejet mental │                │ conditionnelle│
+└──────────────┘         └──────────────┘                └──────────────┘
+┌──────────────┐                                             ┌──────────────┐
+│ Raccourcis   │                                             │ Vocabulaire  │
+│ conceptuels  │                                             │ descriptif   │
+└──────────────┘                                             ├──────────────┤
+┌──────────────┐                                             │ Mots-clés    │
+│ Schémas      │                                             │ émotionnels  │
+│ émotionnels  │                                             ├──────────────┤
+└──────────────┘                                             │ Métaphores & │
+┌──────────────┐                                             │ cadres mentaux│
+│ Schémas      │                                             └──────────────┘
+│ cognitifs    │
+└──────────────┘
+┌──────────────┐
+│ Schémas      │
+│ comportement.│
+└──────────────┘
+
+
+________________
+
+
+📌 Lecture
+                                                                                                                                                                                                                                                                                                                                                                                                                                          * Colonne gauche (Structure cognitive) : C’est la charpente mentale — croyances, modèles mentaux, schémas acquis.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                          * Colonne centrale (Filtre perceptif) : Ce qui décide quelles infos entrent dans la conscience — sélection, priorisation, exclusion.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                          * Colonne droite (Cadre interprétatif) : Ce qui donne sens et cohérence — valeurs, logique interne, langage interne.
+
+________________
+
+
+💡 Force de ce modèle
+                                                                                                                                                                                                                                                                                                                                                                                                                                             * Tout est connecté : les croyances influencent le filtre, qui influence l’interprétation, qui renforce les croyances → boucle fermée.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                             * Permet d’identifier où agir : changer une croyance, ajuster son filtre perceptif, ou reformuler son langage interne peut modifier tout le paradigme.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                             * Applicable en coaching, thérapie, communication.
+Voici la version dynamique avec un exemple concret qui traverse tout le cycle du paradigme humain.
+J’ai choisi un cas où beaucoup peuvent se reconnaître : un collègue ne répond pas à ton message important.
+________________
+
+
+Schéma dynamique – Exemple concret
+perl
+CopierModifier
+┌──────────────────────────────────────────────────────────────┐
+│ 1. STRUCTURE COGNITIVE                                        │
+│ Croyance de base : "Les gens ne sont pas fiables"              │
+│ Modèle mental : "Si on m'ignore, c'est volontaire"             │
+│ Schéma acquis : Interpréter le silence comme un rejet          │
+└──────────────────────────────────────────────────────────────┘
+            │ Influence
+            ▼
+┌──────────────────────────────────────────────────────────────┐
+│ 2. FILTRE PERCEPTIF                                           │
+│ Sélection : Remarquer uniquement que le collègue n'a pas      │
+│             répondu, ignorer le fait qu'il est peut-être      │
+│             occupé ou en réunion.                             │
+│ Priorisation : Considérer ce silence comme l'info la plus      │
+│                importante de la journée.                      │
+│ Exclusion : Écarter l'explication "il est simplement occupé". │
+└──────────────────────────────────────────────────────────────┘
+            │ Alimente
+            ▼
+┌──────────────────────────────────────────────────────────────┐
+│ 3. CADRE INTERPRÉTATIF                                        │
+│ Système de valeurs : Valeur "respect" → ne pas répondre =     │
+│                      manque de respect.                       │
+│ Logique interne : "Il m'ignore donc il me dévalorise".         │
+│ Langage interne : "Encore une preuve que je ne peux pas       │
+│                   compter sur les autres".                    │
+└──────────────────────────────────────────────────────────────┘
+            │ Renforce
+            ▼
+┌──────────────────────────────────────────────────────────────┐
+│ 4. RETOUR SUR STRUCTURE COGNITIVE                             │
+│ La croyance initiale ("Les gens ne sont pas fiables") est     │
+│ confirmée → paradigme renforcé → boucle fermée.               │
+└──────────────────────────────────────────────────────────────┘
+
+
+________________
+
+
+📌 Lecture pas à pas
+                                                                                                                                                                                                                                                                                                                                                                                                                                                1. Structure cognitive → Tes croyances et schémas déterminent déjà comment tu vas percevoir la situation.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                2. Filtre perceptif → Tu vois surtout ce qui confirme ta croyance et ignores les autres possibilités.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                3. Cadre interprétatif → Tu donnes une signification négative à ce que tu as perçu.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                4. Retour → Cette interprétation renforce ta croyance → tu es encore plus convaincu que tu as raison.
+
+________________
+
+
+💡 Ce qui pourrait casser cette boucle
+Pour passer en boucle d’évolution :
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Changer la croyance racine → “Parfois, les gens ne répondent pas car ils sont occupés, pas par manque de respect.”
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Ouvrir le filtre perceptif → Inclure l’info “il est peut-être en réunion”.
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Réinterpréter → “Il n’a pas répondu pour l’instant, ce n’est pas forcément négatif.”
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   * Langage interne → “Je vais attendre un peu avant de tirer une conclusion.”
