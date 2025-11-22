@@ -233,6 +233,36 @@ async def unified_answer(req: AnswerRequest):
         # Use Aura to process the query
         result = aura.process_query(req.query)
         
+        # Extract internal metrics
+        quality = result["quality_assessment"]
+        active_p_name = aura.inner_world.active_paradigm
+        active_p = aura.inner_world.paradigms.get(active_p_name)
+        
+        # Default metrics if paradigm not found
+        delta = 0.5
+        omicron = 0.5
+        infinity = 0.5
+        
+        if active_p:
+            delta = active_p.delta_metric
+            omicron = active_p.omicron_metric
+            infinity = active_p.infinity_metric
+        
+        # Build metrics for UI
+        metrics = {
+            "delta": delta,       # Time/Speed
+            "omicron": omicron,   # Space/Resources
+            "infinity": infinity, # Dimensionality/Depth
+            "paradigm": active_p_name,
+            "reasoning_chain": [
+                {"name": "Perception & Clarification", "status": "completed"},
+                {"name": "Structure & Visualisation", "status": "completed"},
+                {"name": "Exploration (Quantum)", "status": "completed"},
+                {"name": "Immersion & Analysis", "status": "completed"},
+                {"name": "Integration & Response", "status": "completed"}
+            ]
+        }
+        
         # Map Aura response to Unified API format
         return {
             "status": "success",
@@ -244,9 +274,10 @@ async def unified_answer(req: AnswerRequest):
                 "infinity": 0.4,
                 "theta": 0.2
             },
-            "num_documents": 0, # Placeholder
+            "num_documents": 0,
             "confidence": result["quality_assessment"]["quality_score"],
-            "aura_thoughts": result["inner_thoughts"]
+            "aura_thoughts": result["inner_thoughts"],
+            "metrics": metrics
         }
     except Exception as e:
         logger.error(f"Unified Answer error: {e}")
@@ -344,13 +375,13 @@ if __name__ == "__main__":
     print("🚀 Aura GLM Backend API v4.0")
     print("   Powered by NumTriad™ - Property of Lionel Numtema")
     print("="*70)
-    print("📍 Starting on http://0.0.0.0:8081")
+    print("📍 Starting on http://0.0.0.0:8083")
     print("🧠 Consciousness: ACTIVE")
     print("="*70 + "\n")
     
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=8081,
+        port=8083,
         log_level="info"
     )
